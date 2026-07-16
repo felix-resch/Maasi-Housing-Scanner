@@ -1,0 +1,44 @@
+name: Wohnungs-Watcher
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"   # alle 10 Minuten, Zeitangabe in UTC
+  workflow_dispatch: {}       # erlaubt manuellen Start ueber den Actions-Tab
+
+# Erlaubt dem Job, den aktualisierten State zurueck ins Repo zu committen.
+permissions:
+  contents: write
+
+# Verhindert ueberlappende Laeufe, falls ein Lauf laenger dauert.
+concurrency:
+  group: wohnungs-watcher
+  cancel-in-progress: false
+
+jobs:
+  check-listings:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Abhaengigkeiten installieren
+        run: pip install -r requirements.txt
+
+      - name: Watcher ausfuehren
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python main.py
+
+      - name: State zurueck ins Repo committen
+        run: |
+          git config user.name "wohnungs-watcher-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add state.db logs/watcher.log
+          git diff --staged --quiet || git commit -m "State-Update [skip ci]"
+          git push

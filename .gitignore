@@ -1,0 +1,12 @@
+# Secrets - niemals committen
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# lokale Test-DB (auf GitHub Actions wird state.db bewusst committet,
+# lokal soll die Test-DB aber nicht ins Repo)
+state.local.db

@@ -1,0 +1,147 @@
+# Wohnungs-Watcher
+
+Kleines Tool, das niederländische Wohnungsportale regelmäßig auf neue Inserate
+in **Maastricht** prüft und bei einem neuen Fund sofort eine **Discord-Webhook**-
+Nachricht mit dem Link auslöst.
+
+Quellen in der Testphase:
+
+| Quelle | Zugriff | Hinweis |
+|---|---|---|
+| [huurwoningen.nl](https://www.huurwoningen.nl/en/in/maastricht/) | HTML-Parsing (serverseitig gerendert) | ID = 8-stelliges Hex im Detail-Link |
+| [mghousing.nl](https://mghousing.nl/en/listings) | JSON-API `/api/listings` (Payload CMS) | **kein Playwright nötig** |
+
+> Bei der Recherche stellte sich heraus, dass mghousing seine Listings über eine
+> öffentliche JSON-API bereitstellt. Deshalb kommt das Projekt komplett ohne
+> Browser-Automatisierung (Playwright) aus – ein einfacher HTTP-GET reicht für
+> beide Quellen.
+
+## Funktionsweise
+
+Jeder Durchlauf holt die aktuelle Trefferliste je Quelle, vergleicht die
+gefundenen Listing-IDs gegen den gespeicherten Zustand (`state.db`, SQLite),
+verschickt nur für **wirklich neue** IDs eine Discord-Nachricht und aktualisiert
+danach den Zustand.
+
+**Baseline:** Beim allerersten Lauf einer Quelle wird der State nur gefüllt,
+ohne Nachrichten zu verschicken (sonst würden alle ~190 Bestandsinserate auf
+einmal gemeldet). Echte Benachrichtigungen gibt es ab dem zweiten Lauf.
+
+## Projektstruktur
+
+```
+wohnungs-watcher/
+├── config.yaml            # Quellen, Filter, Intervall
+├── .env.example           # Vorlage für die Webhook-URL (nach .env kopieren)
+├── requirements.txt
+├── main.py                # Einstiegspunkt, ein Durchlauf pro Aufruf
+├── test_discord.py        # isolierter Webhook-Test
+├── scrapers/
+│   ├── base.py            # Listing-Datenmodell + Scraper-Interface
+│   ├── huurwoningen.py    # HTML-Parser
+│   └── mghousing.py       # JSON-API-Client
+├── storage/state.py       # SQLite: is_seen(), mark_seen(), Baseline
+├── notifier/discord.py    # Embed-Versand inkl. 429-Retry
+├── logs/watcher.log       # entsteht automatisch
+└── .github/workflows/watch.yml
+```
+
+## Voraussetzungen
+
+- **Python 3.12** (lokal aktuell nicht installiert – siehe unten)
+- `pip install -r requirements.txt`
+
+> ⚠️ Auf dem aktuellen Rechner ist **kein Python installiert**. Zum lokalen
+> Testen musst du Python 3.12 installieren (z. B. über
+> [python.org](https://www.python.org/downloads/) oder den Microsoft Store).
+> Alternativ läuft das Tool direkt auf GitHub Actions ohne lokale Installation
+> – dort ist Python vorhanden. Der „Run workflow“-Button eignet sich dann zum
+> Testen.
+
+## Lokal einrichten und testen
+
+```bash
+# 1. Abhängigkeiten
+pip install -r requirements.txt
+
+# 2. Webhook-URL hinterlegen
+cp .env.example .env
+#   -> DISCORD_WEBHOOK_URL in .env eintragen
+
+# 3. Webhook isoliert testen
+python test_discord.py
+
+# 4. Trockenlauf ohne echten Versand (loggt nur, was gesendet würde)
+python main.py --dry-run
+
+# 5. Echter Einzeldurchlauf
+python main.py
+
+# 6. Optional: Dauerlauf lokal (poll_interval_minutes aus config.yaml)
+python main.py --loop
+```
+
+### State-Logik testen
+
+1. `state.db` löschen
+2. `python main.py` → **Baseline**, es kommt keine Nachricht
+3. `python main.py` → ohne neue Daten wieder keine Nachricht
+4. In `state.db` einen Eintrag löschen (z. B. per DB Browser for SQLite)
+5. `python main.py` → genau dafür kommt eine Nachricht
+
+## Discord-Webhook anlegen
+
+Discord-Kanal → **Kanaleinstellungen → Integrationen → Webhooks → Neuer
+Webhook** → URL kopieren. Diese URL kommt in `.env` (lokal) bzw. als
+GitHub-Actions-Secret (Deployment). **Niemals im Code hartcodieren.**
+
+## Deployment über GitHub Actions
+
+Das Anlegen des Repositories und das Eintragen des Secrets müssen **einmalig von
+dir selbst** im GitHub-Interface gemacht werden (ein Secret trägt grundsätzlich
+nur der Kontoinhaber ein).
+
+1. **Repository anlegen** – auf github.com ein **privates** Repo `wohnungs-watcher`
+   erstellen.
+2. **Projekt hochladen:**
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/<dein-username>/wohnungs-watcher.git
+   git push -u origin main
+   ```
+3. **Secret hinterlegen** – Repo → *Settings → Secrets and variables → Actions →
+   New repository secret* → Name `DISCORD_WEBHOOK_URL`, Value = deine Webhook-URL.
+4. **Workflow** liegt bereits unter `.github/workflows/watch.yml` (Lauf alle
+   10 Minuten, UTC) und wird beim Push mit hochgeladen.
+5. **Testen** – Tab *Actions* → *Wohnungs-Watcher* → *Run workflow*. Beim ersten
+   Lauf (Baseline) kommt bewusst noch keine Discord-Nachricht.
+
+Der Workflow committet die aktualisierte `state.db` nach jedem Lauf zurück ins
+Repo, damit der Zustand zwischen den Läufen erhalten bleibt.
+
+## Konfiguration (`config.yaml`)
+
+- `poll_interval_minutes` – nur für den lokalen `--loop`-Modus.
+- `sources[].url` – bei huurwoningen kann direkt eine vorgefilterte Such-URL
+  hinterlegt werden (z. B. `.../en/in/maastricht/?price=450-650`).
+- `sources[].pages` – Anzahl abgefragter Ergebnisseiten (Standard 1).
+- mghousing: `only_rentals`, `only_available`, `cities` – Filter für Miet-
+  bzw. verfügbare Objekte und Städte.
+
+## Abschaltung nach Ende der Nutzung
+
+- GitHub-Actions-Workflow deaktivieren oder Repo archivieren/löschen
+- Discord-Webhook im Kanal löschen
+- lokale `.env` mit der Webhook-URL löschen
+
+## Hinweise / Risiken
+
+- Strukturänderungen an den Zielseiten können einen Parser brechen; das Logging
+  (`logs/watcher.log`) zeigt pro Lauf Trefferzahlen je Quelle.
+- Höfliches Verhalten: erkennbarer User-Agent, moderates Poll-Intervall.
+- Scraping bewegt sich AGB-seitig in einer Grauzone; für kurzzeitigen, privaten,
+  nicht-kommerziellen Gebrauch mit moderater Frequenz ist das praktische Risiko
+  gering – das ist keine Rechtsberatung.

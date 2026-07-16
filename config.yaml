@@ -1,0 +1,37 @@
+# Zentrale Konfiguration des Wohnungs-Watchers.
+# Die Discord-Webhook-URL steht NICHT hier, sondern als Umgebungsvariable
+# DISCORD_WEBHOOK_URL (lokal in .env, auf GitHub als Actions-Secret).
+discord_webhook_url: "ENV:DISCORD_WEBHOOK_URL"
+
+# Poll-Intervall in Minuten - nur relevant, wenn main.py mit --loop lokal
+# laeuft. Bei GitHub Actions uebernimmt der cron-Zeitplan das Scheduling.
+poll_interval_minutes: 10
+
+# Pfad zur SQLite-State-Datei (relativ zum Projektordner).
+state_db: "state.db"
+
+sources:
+  - name: huurwoningen
+    enabled: true
+    type: static_html
+    # Vorgefilterte Such-URL. Hier kann direkt nach Objekttyp/Preis gefiltert
+    # werden, z. B. .../en/in/maastricht/?price=450-650 - dann muss das Tool
+    # selbst keine Preis-/Zimmerlogik nachbauen.
+    url: "https://www.huurwoningen.nl/en/in/maastricht/"
+    # Wie viele Ergebnisseiten pro Lauf abgefragt werden. Neue Inserate
+    # erscheinen oben auf Seite 1, daher reicht 1 (ggf. 2 als Puffer).
+    pages: 1
+
+  - name: mghousing
+    enabled: true
+    # Die Seite rendert clientseitig, liefert die Daten aber ueber eine
+    # oeffentliche JSON-API (Payload CMS) - kein Playwright noetig.
+    type: api
+    url: "https://mghousing.nl/api/listings"
+    # Nur Mietobjekte melden (Kauf ignorieren).
+    only_rentals: true
+    # Nur verfuegbare Objekte melden (vermietete/reservierte ignorieren).
+    only_available: true
+    # Nur diese Staedte melden. Leere Liste = keine Ortsfilterung.
+    cities:
+      - Maastricht
