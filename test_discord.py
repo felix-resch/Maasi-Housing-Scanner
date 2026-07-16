@@ -12,6 +12,12 @@ import os
 import sys
 from pathlib import Path
 
+# Windows-Konsole ggf. auf UTF-8 stellen, damit Emoji/€/· nicht crashen.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except (AttributeError, ValueError):
+    pass
+
 from dotenv import load_dotenv
 
 from notifier import send_listing
