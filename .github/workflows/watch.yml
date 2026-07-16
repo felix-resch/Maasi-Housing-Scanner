@@ -2,7 +2,12 @@ name: Wohnungs-Watcher
 
 on:
   schedule:
-    - cron: "*/10 * * * *"   # alle 10 Minuten, Zeitangabe in UTC
+    # Alle 5 Minuten (UTC). 5 Min ist das praktische Minimum bei GitHub Actions;
+    # bei hoher Last kann der Start etwas spaeter erfolgen. WICHTIG: Bei einem
+    # PRIVATEN Repo verbraucht das mehr als die 2.000 Gratis-Minuten/Monat
+    # (siehe README, Abschnitt Kosten) -> dann besser ein oeffentliches Repo
+    # (Actions dort unbegrenzt gratis) oder ein groesseres Intervall (z. B. */30).
+    - cron: "*/5 * * * *"
   workflow_dispatch: {}       # erlaubt manuellen Start ueber den Actions-Tab
 
 # Erlaubt dem Job, den aktualisierten State zurueck ins Repo zu committen.

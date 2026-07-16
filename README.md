@@ -103,26 +103,40 @@ Das Anlegen des Repositories und das Eintragen des Secrets müssen **einmalig vo
 dir selbst** im GitHub-Interface gemacht werden (ein Secret trägt grundsätzlich
 nur der Kontoinhaber ein).
 
-1. **Repository anlegen** – auf github.com ein **privates** Repo `wohnungs-watcher`
-   erstellen.
-2. **Projekt hochladen:**
+1. **Repository anlegen** – auf github.com ein Repo `wohnungs-watcher` erstellen
+   (öffentlich oder privat – siehe **Kosten & Intervall** unten).
+2. **Projekt hochladen** (das lokale Git-Repo ist bereits initialisiert und
+   committet – nur noch Remote setzen und pushen):
    ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
    git remote add origin https://github.com/<dein-username>/wohnungs-watcher.git
    git push -u origin main
    ```
 3. **Secret hinterlegen** – Repo → *Settings → Secrets and variables → Actions →
    New repository secret* → Name `DISCORD_WEBHOOK_URL`, Value = deine Webhook-URL.
 4. **Workflow** liegt bereits unter `.github/workflows/watch.yml` (Lauf alle
-   10 Minuten, UTC) und wird beim Push mit hochgeladen.
+   5 Minuten, UTC) und wird beim Push mit hochgeladen.
 5. **Testen** – Tab *Actions* → *Wohnungs-Watcher* → *Run workflow*. Beim ersten
    Lauf (Baseline) kommt bewusst noch keine Discord-Nachricht.
 
 Der Workflow committet die aktualisierte `state.db` nach jedem Lauf zurück ins
 Repo, damit der Zustand zwischen den Läufen erhalten bleibt.
+
+### Kosten & Intervall (wichtig)
+
+GitHub rechnet Actions-Zeit **pro Job auf die nächste volle Minute aufgerundet**.
+Ein Lauf dauert nur Sekunden, zählt aber als **1 Minute**.
+
+- **Öffentliches Repo:** Actions sind **komplett gratis und unbegrenzt** →
+  5-Minuten-Takt problemlos. Nachteil: Code inkl. `config.yaml` (mit deinem
+  Namen/Anschreiben) und `state.db`/Logs sind öffentlich sichtbar.
+- **Privates Repo:** Gratis-Kontingent **2.000 Minuten/Monat**. Bei alle 5 Min
+  (~8.640 Läufe/Monat) wird das **weit überschritten** – auch alle 10 Min
+  (~4.320) liegt darüber. Unter 2.000 bleibt man erst ab **ca. alle 30 Minuten**
+  (`*/30`). Über dem Kontingent pausiert GitHub einfach, es sei denn, du hast ein
+  Zahlungsmittel + Ausgabenlimit > 0 hinterlegt (dann ~0,008 $/Min).
+
+**Empfehlung für 5-Minuten-Takt gratis:** öffentliches Repo mit unauffälligem
+Namen. Wer privat bleiben will, setzt in `watch.yml` `cron: "*/30 * * * *"`.
 
 ## Konfiguration (`config.yaml`)
 
