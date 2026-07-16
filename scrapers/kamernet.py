@@ -127,6 +127,9 @@ class KamernetScraper(BaseScraper):
             desc_parts.append("incl. utilities")
         description = " · ".join(desc_parts) if desc_parts else None
 
+        # Kamernet-Objekte im Zimmer/Studio-Filter sind Einzelunterkuenfte.
+        bedrooms = 1 if word in ("room", "studio") else None
+
         return Listing(
             source=self.name,
             listing_id=str(listing_id),
@@ -135,4 +138,6 @@ class KamernetScraper(BaseScraper):
             price=price_str,
             image_url=image_url,
             description=description,
+            bedrooms=bedrooms,
+            property_kind=word,
         )

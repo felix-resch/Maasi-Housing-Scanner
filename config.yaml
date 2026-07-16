@@ -10,6 +10,22 @@ poll_interval_minutes: 10
 # Pfad zur SQLite-State-Datei (relativ zum Projektordner).
 state_db: "state.db"
 
+# Bewerbungstext, der jeder Discord-Meldung als Copy-Block beigelegt wird.
+# Je nach erkannter Wohnung wird automatisch die passende Variante gewaehlt:
+#   - "shared": Objekt mit >= min_bedrooms_for_shared Schlafzimmern (eigene WG
+#     mit Freund:in moeglich)
+#   - "single": Einzelzimmer, Studio oder 1-Schlafzimmer-Wohnung
+# Platzhalter {title}, {price} und {url} werden automatisch eingesetzt.
+application:
+  enabled: true
+  min_bedrooms_for_shared: 2
+  text_single: |
+    HIER DEINEN TEXT FUER EINE EINZELNE WOHNUNG / EIN ZIMMER EINFUEGEN.
+    (Bezug: {title}, {price})
+  text_shared: |
+    HIER DEINEN TEXT FUER EINE GEMEINSAME WG (MEHRERE ZIMMER) EINFUEGEN.
+    (Bezug: {title}, {price})
+
 sources:
   - name: huurwoningen
     enabled: true

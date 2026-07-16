@@ -79,6 +79,7 @@ def resolve_webhook_url(config: dict) -> str | None:
 
 def run_once(config: dict, webhook_url: str | None, dry_run: bool) -> None:
     db_path = ROOT / config.get("state_db", "state.db")
+    application = config.get("application")
     state = State(str(db_path))
 
     total_found = 0
@@ -134,7 +135,9 @@ def run_once(config: dict, webhook_url: str | None, dry_run: bool) -> None:
                     state.mark_seen(listing, notified=False)
                     continue
 
-                sent = send_listing(webhook_url, listing, source_label=name)
+                sent = send_listing(
+                    webhook_url, listing, source_label=name, application=application
+                )
                 state.mark_seen(listing, notified=sent)
                 if sent:
                     log.info("Gesendet: %s | %s | %s",

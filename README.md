@@ -133,6 +133,20 @@ Repo, damit der Zustand zwischen den Läufen erhalten bleibt.
 - mghousing: `only_rentals`, `only_available`, `cities` – Filter für Miet-
   bzw. verfügbare Objekte und Städte.
 
+### Bewerbungstext (`application`)
+
+Jeder Discord-Meldung wird ein fertiger Bewerbungstext als **kopierbarer
+Code-Block** (Discord zeigt dazu einen Copy-Button) plus ein „Zum Inserat &
+Bewerben"-Link beigelegt. Das Tool erkennt automatisch, ob es sich um eine
+**Einzelunterkunft** (Zimmer, Studio, 1-Schlafzimmer-Wohnung) oder ein
+**Mehrzimmer-Objekt** (≥ `min_bedrooms_for_shared` Schlafzimmer, also für eine
+eigene WG mit Freund:in geeignet) handelt, und wählt entsprechend `text_single`
+oder `text_shared`. Platzhalter `{title}`, `{price}`, `{url}` werden ersetzt.
+
+Die Schlafzimmerzahl kommt bei mghousing aus `details.bedrooms`; Kamernet-Zimmer
+und -Studios gelten immer als Einzelunterkunft. Fehlt die Angabe, wird
+sicherheitshalber `text_single` verwendet.
+
 ## Abschaltung nach Ende der Nutzung
 
 - GitHub-Actions-Workflow deaktivieren oder Repo archivieren/löschen

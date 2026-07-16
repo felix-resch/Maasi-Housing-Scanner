@@ -19,7 +19,45 @@ _EMBED_COLOR = 3066993
 _MAX_RETRIES = 3
 
 
-def _build_payload(listing, source_label: str | None) -> dict:
+def _application_block(listing, application: dict | None) -> str | None:
+    """Passenden Bewerbungstext als kopierbaren Code-Block aufbereiten.
+
+    Waehlt je nach erkannter Wohnung (WG-tauglich vs. einzeln) die Variante
+    aus der Config und setzt die Platzhalter {title}, {price}, {url} ein.
+    """
+    if not application or not application.get("enabled", True):
+        return None
+
+    min_bedrooms = int(application.get("min_bedrooms_for_shared", 2))
+    shared = listing.is_shared_suitable(min_bedrooms)
+
+    template = application.get("text_shared" if shared else "text_single")
+    if not template or not str(template).strip():
+        return None
+
+    try:
+        text = str(template).format(
+            title=listing.title or "",
+            price=listing.price or "",
+            url=listing.url or "",
+        )
+    except (KeyError, IndexError, ValueError):
+        # Unbekannter Platzhalter in der Config -> Text unveraendert nehmen.
+        text = str(template)
+
+    if shared:
+        bedroom_hint = (
+            f" ({listing.bedrooms} Schlafzimmer)" if listing.bedrooms else ""
+        )
+        label = f"🏠 Mehrzimmer{bedroom_hint} – Vorschlag: eigene WG"
+    else:
+        label = "🚪 Einzelunterkunft"
+
+    # Dreifach-Backticks -> Discord zeigt einen Copy-Button.
+    return f"{label}\n**Bewerbungstext (kopieren):**\n```\n{text.strip()}\n```"
+
+
+def _build_payload(listing, source_label: str | None, application: dict | None) -> dict:
     embed: dict = {
         "title": (listing.title or "Neues Inserat")[:256],
         "url": listing.url,
@@ -31,6 +69,13 @@ def _build_payload(listing, source_label: str | None) -> dict:
         description_lines.append(f"**{listing.price}**")
     if listing.description:
         description_lines.append(listing.description)
+
+    app_block = _application_block(listing, application)
+    if app_block:
+        description_lines.append("")
+        description_lines.append(f"➡️ **[Zum Inserat & Bewerben]({listing.url})**")
+        description_lines.append(app_block)
+
     if description_lines:
         embed["description"] = "\n".join(description_lines)[:4096]
 
@@ -47,13 +92,14 @@ def send_listing(
     listing,
     source_label: str | None = None,
     timeout: int = 15,
+    application: dict | None = None,
 ) -> bool:
     """Ein Listing als Discord-Embed senden.
 
     Behandelt Rate-Limits (HTTP 429): wartet die von Discord genannte Zeit ab
     und versucht es erneut. Gibt True bei Erfolg zurueck, sonst False.
     """
-    payload = _build_payload(listing, source_label)
+    payload = _build_payload(listing, source_label, application)
 
     for attempt in range(1, _MAX_RETRIES + 1):
         try:

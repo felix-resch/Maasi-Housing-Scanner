@@ -30,6 +30,41 @@ log = logging.getLogger("watcher")
 
 DETAIL_BASE = "https://mghousing.nl/en/listings"
 
+# mghousing-Typkennungen -> vereinheitlichtes property_kind
+_KIND_BY_SUBTYPE = {
+    "STUDIO": "studio",
+    "STUDENTENKAMER": "room",
+    "KAMER": "room",
+}
+_KIND_BY_MAINTYPE = {
+    "HOUSE": "house",
+    "APARTMENT": "apartment",
+    "ROOM": "room",
+}
+
+
+def _amount(field) -> int | None:
+    """Zahl aus einem {isRange, amount}-Feld ziehen, sonst None."""
+    if isinstance(field, dict) and isinstance(field.get("amount"), (int, float)):
+        return int(field["amount"])
+    return None
+
+
+def _identifier(type_list) -> str | None:
+    """identifier des ersten Eintrags einer mainType/subType-Liste."""
+    if isinstance(type_list, list) and type_list:
+        return type_list[0].get("identifier")
+    return None
+
+
+def _map_kind(main_type: str | None, sub_type: str | None) -> str | None:
+    """Vereinheitlichtes property_kind aus mainType/subType ableiten."""
+    if sub_type and sub_type in _KIND_BY_SUBTYPE:
+        return _KIND_BY_SUBTYPE[sub_type]
+    if main_type and main_type in _KIND_BY_MAINTYPE:
+        return _KIND_BY_MAINTYPE[main_type]
+    return None
+
 
 class MghousingScraper(BaseScraper):
     name = "mghousing"
@@ -112,13 +147,24 @@ class MghousingScraper(BaseScraper):
         if images:
             image_url = images[0].get("original")
 
+        # Zimmer-/Typ-Infos fuer die WG-Erkennung.
+        details = doc.get("details") or {}
+        bedrooms = _amount(details.get("bedrooms"))
+        rooms = _amount(details.get("rooms"))
+        # Fallback: ohne Schlafzimmerangabe grob ueber Zimmerzahl schaetzen
+        # (Zimmer inkl. Wohnzimmer, daher >=3 Zimmer ~ >=2 Schlafzimmer).
+        if bedrooms is None and rooms is not None:
+            bedrooms = max(rooms - 1, 0) if rooms >= 1 else None
+        main_type = _identifier(details.get("type", {}).get("mainType"))
+        sub_type = _identifier(details.get("type", {}).get("subType"))
+        property_kind = _map_kind(main_type, sub_type)
+
         postal = address.get("postalCode") or ""
         desc_parts = [p for p in [f"{postal} {city}".strip()] if p.strip()]
-        extra = []
+        if bedrooms:
+            desc_parts.append(f"{bedrooms} bedroom{'s' if bedrooms != 1 else ''}")
         if rentals.get("isFurnished"):
-            extra.append("Furnished")
-        if extra:
-            desc_parts.extend(extra)
+            desc_parts.append("Furnished")
         description = " · ".join(desc_parts) if desc_parts else None
 
         return Listing(
@@ -129,4 +175,6 @@ class MghousingScraper(BaseScraper):
             price=price_str,
             image_url=image_url,
             description=description,
+            bedrooms=bedrooms,
+            property_kind=property_kind,
         )
