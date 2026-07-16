@@ -136,11 +136,14 @@ class MghousingScraper(BaseScraper):
         house_no = address.get("houseNumber") or ""
         title = " ".join(p for p in [street, house_no] if p).strip() or "Inserat"
 
+        # Die Website zeigt die Gesamtmiete = Grundmiete + Nebenkosten
+        # (z. B. Brusselsestraat 10: 600 + 100 = 700). Daher beides addieren.
         price_str = ""
         rentals = price.get("rentals") or {}
         amount = rentals.get("amount")
         if amount:
-            price_str = f"€{amount:,.0f} p.m.".replace(",", ".")
+            total = int(amount) + int(rentals.get("serviceCharges") or 0)
+            price_str = f"€{total:,} p.m.".replace(",", ".")
 
         image_url = None
         images = (doc.get("media") or {}).get("images") or []

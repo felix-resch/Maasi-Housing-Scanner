@@ -19,11 +19,27 @@ _EMBED_COLOR = 3066993
 _MAX_RETRIES = 3
 
 
-def _application_block(listing, application: dict | None) -> str | None:
-    """Passenden Bewerbungstext als kopierbaren Code-Block aufbereiten.
+# Sprachen, die jeder Meldung beigelegt werden (Reihenfolge = Anzeige).
+_LANGUAGES = [("en", "🇬🇧 English"), ("nl", "🇳🇱 Nederlands")]
 
-    Waehlt je nach erkannter Wohnung (WG-tauglich vs. einzeln) die Variante
-    aus der Config und setzt die Platzhalter {title}, {price}, {url} ein.
+
+def _fill(template, listing) -> str:
+    try:
+        return str(template).format(
+            title=listing.title or "",
+            price=listing.price or "",
+            url=listing.url or "",
+        )
+    except (KeyError, IndexError, ValueError):
+        # Unbekannter Platzhalter in der Config -> Text unveraendert nehmen.
+        return str(template)
+
+
+def _application_block(listing, application: dict | None) -> str | None:
+    """Passende Bewerbungstexte (EN + NL) als kopierbare Code-Bloecke aufbereiten.
+
+    Waehlt je nach erkannter Wohnung (WG-tauglich vs. einzeln) die Variante aus
+    der Config und setzt den Platzhalter {title} ein.
     """
     if not application or not application.get("enabled", True):
         return None
@@ -31,19 +47,9 @@ def _application_block(listing, application: dict | None) -> str | None:
     min_bedrooms = int(application.get("min_bedrooms_for_shared", 2))
     shared = listing.is_shared_suitable(min_bedrooms)
 
-    template = application.get("text_shared" if shared else "text_single")
-    if not template or not str(template).strip():
+    texts = application.get("shared" if shared else "single")
+    if not isinstance(texts, dict):
         return None
-
-    try:
-        text = str(template).format(
-            title=listing.title or "",
-            price=listing.price or "",
-            url=listing.url or "",
-        )
-    except (KeyError, IndexError, ValueError):
-        # Unbekannter Platzhalter in der Config -> Text unveraendert nehmen.
-        text = str(template)
 
     if shared:
         bedroom_hint = (
@@ -53,8 +59,17 @@ def _application_block(listing, application: dict | None) -> str | None:
     else:
         label = "🚪 Einzelunterkunft"
 
-    # Dreifach-Backticks -> Discord zeigt einen Copy-Button.
-    return f"{label}\n**Bewerbungstext (kopieren):**\n```\n{text.strip()}\n```"
+    parts = [label, f"➡️ **[Zum Inserat & Bewerben]({listing.url})**"]
+    for key, lang_label in _LANGUAGES:
+        template = texts.get(key)
+        if not template or not str(template).strip():
+            continue
+        text = _fill(template, listing).strip()
+        # Dreifach-Backticks -> Discord zeigt einen Copy-Button.
+        parts.append(f"**{lang_label}:**\n```\n{text}\n```")
+
+    # Nur zurueckgeben, wenn mindestens ein Sprachblock vorhanden ist.
+    return "\n".join(parts) if len(parts) > 2 else None
 
 
 def _build_payload(listing, source_label: str | None, application: dict | None) -> dict:
@@ -73,7 +88,6 @@ def _build_payload(listing, source_label: str | None, application: dict | None) 
     app_block = _application_block(listing, application)
     if app_block:
         description_lines.append("")
-        description_lines.append(f"➡️ **[Zum Inserat & Bewerben]({listing.url})**")
         description_lines.append(app_block)
 
     if description_lines:

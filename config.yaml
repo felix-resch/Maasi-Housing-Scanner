@@ -10,60 +10,46 @@ poll_interval_minutes: 10
 # Pfad zur SQLite-State-Datei (relativ zum Projektordner).
 state_db: "state.db"
 
-# Bewerbungstext, der jeder Discord-Meldung als Copy-Block beigelegt wird.
-# Je nach erkannter Wohnung wird automatisch die passende Variante gewaehlt:
+# Bewerbungstext, der jeder Discord-Meldung als kopierbarer Block beigelegt
+# wird - IMMER in Englisch UND Niederlaendisch. Je nach erkannter Wohnung wird
+# automatisch die passende Variante gewaehlt:
 #   - "shared": Objekt mit >= min_bedrooms_for_shared Schlafzimmern (eigene WG
 #     mit Freund:in moeglich)
 #   - "single": Einzelzimmer, Studio oder 1-Schlafzimmer-Wohnung
-# Platzhalter {title}, {price} und {url} werden automatisch eingesetzt.
+# Platzhalter {title} wird eingesetzt (der Preis steht bereits oben im Embed und
+# wird im Text bewusst nicht wiederholt). Jede logische Zeile steht auf EINER
+# Zeile; Discord bricht selbst um.
 application:
   enabled: true
   min_bedrooms_for_shared: 2
 
-  # Aktive Sprache: Englisch. Fuer Niederlaendisch die englischen Bloecke durch
-  # die auskommentierten NL-Varianten weiter unten ersetzen.
-  text_single: |
-    Dear landlord,
-    I'm Felix (22), an incoming Master's student at the School of Business and
-    Economics (SBE) at Maastricht University, moving from Germany this September
-    and still looking for accommodation. Your place at {title} ({price}) would
-    suit me perfectly. A parental guarantee is available.
-    Could I arrange a viewing (in person or virtual) soon? Do you need any
-    further information?
-    Kind regards,
-    Felix Resch
-  text_shared: |
-    Dear Sir or Madam,
-    We are two close friends and students (Jonas, 22 & Felix, 22) starting our
-    Master's at Maastricht University this September. Your property at {title}
-    ({price}) looks like the ideal place for us. A parental guarantee is
-    available.
-    Would a viewing (in person or virtual) be possible soon? Do you need any
-    further information?
-    Kind regards,
-    Felix Resch
+  single:
+    en: |
+      Dear landlord,
+      I'm Felix (22), an incoming Master's student at SBE, Maastricht University, moving from Germany this September and still looking for accommodation. Your place at {title} would suit me perfectly. A parental guarantee is available.
+      Could I arrange a viewing (in person or virtual) soon? Do you need any further information?
+      Kind regards,
+      Felix Resch
+    nl: |
+      Geachte verhuurder,
+      Ik ben Felix (22), aankomend masterstudent aan SBE, Universiteit Maastricht. Ik verhuis in september vanuit Duitsland en ben nog op zoek naar woonruimte. Uw woning aan {title} zou perfect passen. Een ouderlijke garantstelling is mogelijk.
+      Zou ik binnenkort langs kunnen komen voor een bezichtiging (fysiek of virtueel)? Heeft u nog verdere informatie nodig?
+      Met vriendelijke groet,
+      Felix Resch
 
-  # --- Niederlaendische Alternativen (bei Bedarf oben einsetzen) -------------
-  # text_single: |
-  #   Geachte verhuurder,
-  #   Ik ben Felix (22), aankomend masterstudent aan de School of Business and
-  #   Economics (SBE) van de Universiteit Maastricht. Ik verhuis in september
-  #   vanuit Duitsland en ben nog op zoek naar woonruimte. Uw woning aan {title}
-  #   ({price}) zou perfect passen. Een ouderlijke garantstelling is mogelijk.
-  #   Zou ik binnenkort langs kunnen komen voor een bezichtiging (fysiek of
-  #   virtueel)? Heeft u nog verdere informatie nodig?
-  #   Met vriendelijke groet,
-  #   Felix Resch
-  # text_shared: |
-  #   Geachte heer/mevrouw,
-  #   Wij zijn twee bevriende studenten (Jonas, 22 & Felix, 22) die in september
-  #   aan onze master aan de Universiteit Maastricht beginnen. Uw woning aan
-  #   {title} ({price}) lijkt de ideale plek voor ons. Een ouderlijke
-  #   garantstelling is mogelijk.
-  #   Zou een bezichtiging (fysiek of virtueel) binnenkort mogelijk zijn? Heeft
-  #   u nog verdere informatie nodig?
-  #   Met vriendelijke groet,
-  #   Felix Resch
+  shared:
+    en: |
+      Dear Sir or Madam,
+      We are two close friends and students (Jonas, 22 & Felix, 22) starting our Master's at Maastricht University this September. Your property at {title} looks like the ideal place for us. A parental guarantee is available.
+      Would a viewing (in person or virtual) be possible soon? Do you need any further information?
+      Kind regards,
+      Felix Resch
+    nl: |
+      Geachte heer/mevrouw,
+      Wij zijn twee bevriende studenten (Jonas, 22 & Felix, 22) die in september aan onze master aan de Universiteit Maastricht beginnen. Uw woning aan {title} lijkt de ideale plek voor ons. Een ouderlijke garantstelling is mogelijk.
+      Zou een bezichtiging (fysiek of virtueel) binnenkort mogelijk zijn? Heeft u nog verdere informatie nodig?
+      Met vriendelijke groet,
+      Felix Resch
 
 sources:
   - name: huurwoningen
