@@ -4,17 +4,24 @@ Kleines Tool, das niederländische Wohnungsportale regelmäßig auf neue Inserat
 in **Maastricht** prüft und bei einem neuen Fund sofort eine **Discord-Webhook**-
 Nachricht mit dem Link auslöst.
 
-Quellen in der Testphase:
+Quellen:
 
-| Quelle | Zugriff | Hinweis |
+| Quelle | Zugriff | Status |
 |---|---|---|
-| [huurwoningen.nl](https://www.huurwoningen.nl/en/in/maastricht/) | HTML-Parsing (serverseitig gerendert) | ID = 8-stelliges Hex im Detail-Link |
-| [mghousing.nl](https://mghousing.nl/en/listings) | JSON-API `/api/listings` (Payload CMS) | **kein Playwright nötig** |
+| [kamernet.nl](https://kamernet.nl/en/for-rent/properties-maastricht) | `__NEXT_DATA__`-JSON im HTML | ✅ funktioniert (v. a. Zimmer/Studios) |
+| [mghousing.nl](https://mghousing.nl/en/listings) | JSON-API `/api/listings` (Payload CMS) | ✅ funktioniert |
+| [huurwoningen.nl](https://www.huurwoningen.nl/en/in/maastricht/) | HTML-Parsing (serverseitig) | ⛔ Cloudflare-Challenge – Scraper drin, wird pro Lauf still übersprungen |
 
-> Bei der Recherche stellte sich heraus, dass mghousing seine Listings über eine
-> öffentliche JSON-API bereitstellt. Deshalb kommt das Projekt komplett ohne
-> Browser-Automatisierung (Playwright) aus – ein einfacher HTTP-GET reicht für
-> beide Quellen.
+> **Keine Browser-Automatisierung (Playwright) nötig.** mghousing liefert eine
+> öffentliche JSON-API, Kamernet bettet die Suchergebnisse als JSON ins HTML ein
+> (Next.js `__NEXT_DATA__`) – ein einfacher HTTP-GET reicht für beide.
+>
+> **huurwoningen.nl** steht hinter einer Cloudflare-Bot-Challenge
+> (`cf-mitigated: challenge`). Ein einfacher HTTP-Client kommt dort nicht durch;
+> das Umgehen von Cloudflare ist ein bewusstes Nicht-Ziel. Der Scraper bleibt
+> registriert (falls sich das Verhalten ändert) und wird bei einem 403 mit einer
+> einzeiligen Warnung übersprungen, ohne den Lauf zu stören. Als Ersatz für
+> huurwoningen eignet sich dessen eigener „Newest properties"-E-Mail-Alert.
 
 ## Funktionsweise
 
@@ -38,8 +45,9 @@ wohnungs-watcher/
 ├── test_discord.py        # isolierter Webhook-Test
 ├── scrapers/
 │   ├── base.py            # Listing-Datenmodell + Scraper-Interface
-│   ├── huurwoningen.py    # HTML-Parser
-│   └── mghousing.py       # JSON-API-Client
+│   ├── kamernet.py        # __NEXT_DATA__-JSON-Parser
+│   ├── mghousing.py       # JSON-API-Client
+│   └── huurwoningen.py    # HTML-Parser (aktuell Cloudflare-geblockt)
 ├── storage/state.py       # SQLite: is_seen(), mark_seen(), Baseline
 ├── notifier/discord.py    # Embed-Versand inkl. 429-Retry
 ├── logs/watcher.log       # entsteht automatisch
@@ -48,15 +56,9 @@ wohnungs-watcher/
 
 ## Voraussetzungen
 
-- **Python 3.12** (lokal aktuell nicht installiert – siehe unten)
-- `pip install -r requirements.txt`
-
-> ⚠️ Auf dem aktuellen Rechner ist **kein Python installiert**. Zum lokalen
-> Testen musst du Python 3.12 installieren (z. B. über
-> [python.org](https://www.python.org/downloads/) oder den Microsoft Store).
-> Alternativ läuft das Tool direkt auf GitHub Actions ohne lokale Installation
-> – dort ist Python vorhanden. Der „Run workflow“-Button eignet sich dann zum
-> Testen.
+- **Python 3.12** (auf diesem Rechner bereits installiert unter
+  `%LOCALAPPDATA%\Programs\Python\Python312\python.exe`)
+- `pip install -r requirements.txt` (Abhängigkeiten bereits installiert)
 
 ## Lokal einrichten und testen
 

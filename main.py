@@ -27,6 +27,7 @@ import time
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
 
+import requests
 import yaml
 from dotenv import load_dotenv
 
@@ -99,6 +100,11 @@ def run_once(config: dict, webhook_url: str | None, dry_run: bool) -> None:
 
             try:
                 listings = scraper_cls(source_cfg).fetch()
+            except requests.RequestException as exc:
+                # Erwartbare Netz-/HTTP-Fehler (z. B. huurwoningen 403 durch
+                # Cloudflare): knappe Warnung statt Traceback. Lauf laeuft weiter.
+                log.warning("Quelle '%s' nicht erreichbar: %s", name, exc)
+                continue
             except Exception as exc:  # eine kaputte Quelle darf den Lauf nicht abbrechen
                 log.exception("Quelle '%s' fehlgeschlagen: %s", name, exc)
                 continue

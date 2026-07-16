@@ -22,6 +22,16 @@ sources:
     # erscheinen oben auf Seite 1, daher reicht 1 (ggf. 2 als Puffer).
     pages: 1
 
+  - name: kamernet
+    enabled: true
+    # Next.js-Seite, Daten stehen als JSON im HTML (__NEXT_DATA__).
+    # requests reicht, kein Cloudflare. Vor allem Zimmer/Studios (studenten-
+    # relevant). "properties-<stadt>" umfasst alle Typen.
+    type: static_html
+    url: "https://kamernet.nl/en/for-rent/properties-maastricht"
+    cities:
+      - Maastricht
+
   - name: mghousing
     enabled: true
     # Die Seite rendert clientseitig, liefert die Daten aber ueber eine

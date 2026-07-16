@@ -3,6 +3,7 @@
 from .base import BaseScraper, Listing
 from .huurwoningen import HuurwoningenScraper
 from .mghousing import MghousingScraper
+from .kamernet import KamernetScraper
 
 # Registry: config-Name -> Scraper-Klasse.
 # Eine neue Quelle bedeutet: neues Modul + ein Eintrag hier + ein Block in
@@ -10,6 +11,7 @@ from .mghousing import MghousingScraper
 SCRAPERS = {
     HuurwoningenScraper.name: HuurwoningenScraper,
     MghousingScraper.name: MghousingScraper,
+    KamernetScraper.name: KamernetScraper,
 }
 
 __all__ = ["BaseScraper", "Listing", "SCRAPERS"]
