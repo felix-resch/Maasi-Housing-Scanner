@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import logging
 import time
+import urllib.parse
 
 import requests
 
@@ -17,6 +18,23 @@ log = logging.getLogger("watcher")
 # Gruen (wie im Plan als Beispiel-Embed-Farbe).
 _EMBED_COLOR = 3066993
 _MAX_RETRIES = 3
+
+# Discord-API-Basis fuer das Setzen von Reaktionen (nur mit Bot-Token moeglich).
+_API_BASE = "https://discord.com/api/v10"
+
+# Quellenname -> anzuzeigende Website.
+_WEBSITES = {
+    "kamernet": "kamernet.nl",
+    "mghousing": "mghousing.nl",
+    "wmm": "wmm.nl",
+    "maasland": "maaslandrelocation.nl",
+    "immoweb": "immoweb.be",
+    "huurwoningen": "huurwoningen.nl",
+}
+
+
+def _website_for(listing, source_label: str | None) -> str:
+    return _WEBSITES.get(listing.source, source_label or listing.source)
 
 
 # Sprachen, die jeder Meldung beigelegt werden (Reihenfolge = Anzeige).
@@ -73,13 +91,15 @@ def _application_block(listing, application: dict | None) -> str | None:
 
 
 def _build_payload(listing, source_label: str | None, application: dict | None) -> dict:
+    website = _website_for(listing, source_label)
     embed: dict = {
         "title": (listing.title or "Neues Inserat")[:256],
         "url": listing.url,
         "color": _EMBED_COLOR,
     }
 
-    description_lines = []
+    # Website als erste, gut sichtbare Zeile.
+    description_lines = [f"🌐 **{website}**"]
     if listing.price:
         description_lines.append(f"**{listing.price}**")
     if listing.description:
@@ -90,15 +110,57 @@ def _build_payload(listing, source_label: str | None, application: dict | None) 
         description_lines.append("")
         description_lines.append(app_block)
 
-    if description_lines:
-        embed["description"] = "\n".join(description_lines)[:4096]
+    embed["description"] = "\n".join(description_lines)[:4096]
 
     if listing.image_url:
         embed["image"] = {"url": listing.image_url}
 
-    embed["footer"] = {"text": f"Quelle: {source_label or listing.source}"}
+    embed["footer"] = {"text": f"Quelle: {website}"}
 
     return {"embeds": [embed]}
+
+
+def _reaction_emojis(reactions: dict | None) -> list[str]:
+    """Liste der Reaktions-Emojis aus der Config ziehen (falls aktiviert)."""
+    if not reactions or not reactions.get("enabled", True):
+        return []
+    out: list[str] = []
+    for item in reactions.get("items") or []:
+        if isinstance(item, dict) and item.get("emoji"):
+            out.append(str(item["emoji"]))
+        elif isinstance(item, str) and item.strip():
+            out.append(item.strip())
+    return out
+
+
+def _add_reactions(bot_token, channel_id, message_id, emojis, timeout=15) -> None:
+    """Reaktionen an eine bereits gepostete Nachricht setzen (nur mit Bot-Token).
+
+    Reaktionen kann ein Webhook nicht setzen - das geht nur ueber die Discord-API
+    mit einem Bot-Token. Fehler pro Emoji werden geloggt, brechen aber nicht ab.
+    """
+    if not (bot_token and channel_id and message_id):
+        return
+    headers = {"Authorization": f"Bot {bot_token}"}
+    for emoji in emojis:
+        enc = urllib.parse.quote(emoji)
+        api = (f"{_API_BASE}/channels/{channel_id}/messages/{message_id}"
+               f"/reactions/{enc}/@me")
+        try:
+            r = requests.put(api, headers=headers, timeout=timeout)
+        except requests.RequestException as exc:
+            log.warning("Reaktion %s fehlgeschlagen: %s", emoji, exc)
+            continue
+        if r.status_code == 429:
+            time.sleep(_retry_after_seconds(r))
+            try:
+                r = requests.put(api, headers=headers, timeout=timeout)
+            except requests.RequestException:
+                continue
+        if r.status_code not in (200, 204):
+            log.warning("Reaktion %s -> HTTP %s: %s",
+                        emoji, r.status_code, r.text[:150])
+        time.sleep(0.3)  # sanftes Rate-Limit fuer Reaktionen
 
 
 def send_listing(
@@ -107,23 +169,39 @@ def send_listing(
     source_label: str | None = None,
     timeout: int = 15,
     application: dict | None = None,
+    bot_token: str | None = None,
+    reactions: dict | None = None,
 ) -> bool:
-    """Ein Listing als Discord-Embed senden.
+    """Ein Listing als Discord-Embed senden und optional Reaktionen setzen.
 
-    Behandelt Rate-Limits (HTTP 429): wartet die von Discord genannte Zeit ab
-    und versucht es erneut. Gibt True bei Erfolg zurueck, sonst False.
+    Behandelt Rate-Limits (HTTP 429). Wenn ein Bot-Token uebergeben wird und in
+    der Config Reaktionen aktiviert sind, werden diese danach an die Nachricht
+    gesetzt. Gibt True bei erfolgreichem Versand zurueck (unabhaengig davon, ob
+    die Reaktionen klappten), sonst False.
     """
     payload = _build_payload(listing, source_label, application)
 
+    # wait=true -> Discord liefert die erstellte Nachricht (id + channel_id)
+    # zurueck, was wir zum Setzen der Reaktionen brauchen.
+    exec_url = webhook_url + ("&" if "?" in webhook_url else "?") + "wait=true"
+
+    message = None
+    sent = False
     for attempt in range(1, _MAX_RETRIES + 1):
         try:
-            resp = requests.post(webhook_url, json=payload, timeout=timeout)
+            resp = requests.post(exec_url, json=payload, timeout=timeout)
         except requests.RequestException as exc:
             log.warning("Discord-Versand fehlgeschlagen (%s): %s", listing.key, exc)
             return False
 
         if resp.status_code in (200, 204):
-            return True
+            sent = True
+            if resp.status_code == 200:
+                try:
+                    message = resp.json()
+                except ValueError:
+                    message = None
+            break
 
         if resp.status_code == 429:
             retry_after = _retry_after_seconds(resp)
@@ -144,9 +222,18 @@ def send_listing(
         )
         return False
 
-    log.warning("Discord-Versand nach %s Versuchen aufgegeben: %s",
-                _MAX_RETRIES, listing.key)
-    return False
+    if not sent:
+        log.warning("Discord-Versand nach %s Versuchen aufgegeben: %s",
+                    _MAX_RETRIES, listing.key)
+        return False
+
+    emojis = _reaction_emojis(reactions)
+    if emojis and bot_token and message:
+        _add_reactions(
+            bot_token, message.get("channel_id"), message.get("id"), emojis, timeout
+        )
+
+    return True
 
 
 def _retry_after_seconds(resp: requests.Response) -> float:

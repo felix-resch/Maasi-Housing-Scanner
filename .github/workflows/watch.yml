@@ -38,6 +38,8 @@ jobs:
       - name: Watcher ausfuehren
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          # Optional: nur noetig fuer die automatischen Status-Reaktionen.
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
         run: python main.py
 
       - name: State zurueck ins Repo committen

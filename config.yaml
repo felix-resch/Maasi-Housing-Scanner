@@ -19,8 +19,23 @@ state_db: "state.db"
 # Platzhalter {title} wird eingesetzt (der Preis steht bereits oben im Embed und
 # wird im Text bewusst nicht wiederholt). Jede logische Zeile steht auf EINER
 # Zeile; Discord bricht selbst um.
-application:
+# Automatische Status-Reaktionen an jede Meldung (zum Anklicken).
+# WICHTIG: Reaktionen kann nur ein Discord-BOT setzen, kein Webhook. Dafuer muss
+# die Umgebungsvariable DISCORD_BOT_TOKEN gesetzt sein UND der Bot im Server mit
+# dem Recht "Add Reactions" (Reaktionen hinzufuegen) sein. Ohne Token werden die
+# Reaktionen einfach uebersprungen - die Meldung selbst kommt trotzdem an.
+reactions:
   enabled: true
+  items:
+    - emoji: "➡️"   # beworben
+    - emoji: "❌"   # werde ich nicht bewerben
+    - emoji: "❓"   # unsicher
+    - emoji: "⏰"   # muss ich mich noch bewerben
+
+# Bewerbungstexte werden aktuell NICHT an die Meldung gehaengt (enabled: false).
+# Die Texte bleiben hier stehen, falls du sie spaeter wieder aktivieren willst.
+application:
+  enabled: false
   min_bedrooms_for_shared: 2
 
   single:

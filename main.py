@@ -80,6 +80,11 @@ def resolve_webhook_url(config: dict) -> str | None:
 def run_once(config: dict, webhook_url: str | None, dry_run: bool) -> None:
     db_path = ROOT / config.get("state_db", "state.db")
     application = config.get("application")
+    reactions = config.get("reactions")
+    bot_token = os.environ.get("DISCORD_BOT_TOKEN")
+    if reactions and reactions.get("enabled", True) and not bot_token:
+        log.info("Reaktionen aktiviert, aber kein DISCORD_BOT_TOKEN gesetzt - "
+                 "Reaktionen werden uebersprungen (Meldungen kommen trotzdem).")
     state = State(str(db_path))
 
     total_found = 0
@@ -136,7 +141,8 @@ def run_once(config: dict, webhook_url: str | None, dry_run: bool) -> None:
                     continue
 
                 sent = send_listing(
-                    webhook_url, listing, source_label=name, application=application
+                    webhook_url, listing, source_label=name, application=application,
+                    bot_token=bot_token, reactions=reactions,
                 )
                 state.mark_seen(listing, notified=sent)
                 if sent:

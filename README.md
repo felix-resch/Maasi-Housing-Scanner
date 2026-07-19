@@ -104,6 +104,34 @@ Discord-Kanal → **Kanaleinstellungen → Integrationen → Webhooks → Neuer
 Webhook** → URL kopieren. Diese URL kommt in `.env` (lokal) bzw. als
 GitHub-Actions-Secret (Deployment). **Niemals im Code hartcodieren.**
 
+Jede Meldung zeigt oben die Quell-Website (z. B. `🌐 mghousing.nl`).
+
+## Status-Reaktionen (optional – benötigt einen Bot)
+
+An jede Meldung werden automatisch Reaktions-Buttons gesetzt:
+
+| Reaktion | Bedeutung |
+|---|---|
+| ➡️ | beworben |
+| ❌ | werde ich nicht bewerben |
+| ❓ | unsicher |
+| ⏰ | muss ich mich noch bewerben |
+
+**Wichtig:** Ein Webhook kann technisch **keine** Reaktionen setzen – das kann in
+Discord nur ein **Bot**. Ohne Bot-Token kommen die Meldungen trotzdem, nur ohne
+Reaktionen. Einrichtung (einmalig):
+
+1. [discord.com/developers/applications](https://discord.com/developers/applications)
+   → **New Application** → Tab **Bot** → **Reset Token** → Token kopieren.
+2. Bot in deinen Server einladen: Tab **OAuth2 → URL Generator** → Scopes `bot`
+   → Bot-Permissions **Add Reactions** (und **View Channels**, **Read Message
+   History**) → generierte URL öffnen → Server wählen.
+3. Token hinterlegen: lokal als `DISCORD_BOT_TOKEN` in `.env`, für GitHub als
+   zweites Actions-Secret `DISCORD_BOT_TOKEN`.
+
+Die Reaktionen lassen sich in `config.yaml` unter `reactions` an-/abschalten und
+anpassen.
+
 ## Deployment über GitHub Actions
 
 Das Anlegen des Repositories und das Eintragen des Secrets müssen **einmalig von
