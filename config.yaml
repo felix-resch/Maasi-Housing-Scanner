@@ -148,10 +148,13 @@ sources:
 
   - name: immoweb
     enabled: true
-    # Belgische Grenzregion bei Maastricht. Die URL enthaelt das gezeichnete
-    # Suchgebiet (geoSearchAreas-Polygon) + maxPrice. WICHTIG: einfache
-    # Anfuehrungszeichen, damit die Backslashes im Polygon literal bleiben.
+    # Belgische Grenzgemeinden bei Maastricht, per SERVER-seitigem PLZ-Filter
+    # (postalCodes) - das filtert zuverlaessig, anders als das gezeichnete
+    # Polygon (das immoweb nur im Browser per JS anwendet, nicht im HTML).
+    # PLZ anpassen, um das Gebiet zu aendern:
+    #   3620 Lanaken · 3630 Maasmechelen · 3690 Zutendaal · 3740 Bilzen
+    #   3770 Riemst · 3798 Voeren · 4600 Visé (BE-Wallonie, direkt suedlich)
     type: static_html
-    url: 'https://www.immoweb.be/en/search/apartment/for-rent?countries=BE&geoSearchAreas=uwzuHyr_b@aBjcHvIfzE~i@|mMle@t|Eb{AppExhA~}Ahv@t^~}@`PbuA{Cvq@oRxmBgcAz|AcyAhgAq{AhdAc`CloBkrGzeAkvBb`BmfFnQ}lA`B}fLwn@o`Bi\ca@cj@e\oqHchA{zUzwE&maxPrice=2000&page=1&orderBy=relevance'
-    # Nur diese Orte (belgische Nachbargemeinden). Leer = kein Ortsfilter.
+    url: "https://www.immoweb.be/en/search/apartment/for-rent?countries=BE&postalCodes=3620,3630,3690,3740,3770,3798,4600&orderBy=newest"
+    # Zusaetzlicher Ortsfilter nicht noetig (PLZ filtert schon serverseitig).
     cities: []
