@@ -104,7 +104,12 @@ Discord-Kanal → **Kanaleinstellungen → Integrationen → Webhooks → Neuer
 Webhook** → URL kopieren. Diese URL kommt in `.env` (lokal) bzw. als
 GitHub-Actions-Secret (Deployment). **Niemals im Code hartcodieren.**
 
-Jede Meldung zeigt oben die Quell-Website (z. B. `🌐 mghousing.nl`).
+Jede Meldung zeigt: oben die Quell-Website (z. B. `🌐 mghousing.nl`), Preis und
+Eckdaten, das **Online-Datum** des Inserats (`🕒 Online seit …`, wo die Quelle es
+liefert – mghousing & immoweb; als dynamischer Discord-Zeitstempel in lokaler
+Zeit) sowie den **Fund-Zeitpunkt** des Watchers (Footer, ≈ Online-Zeit bei Poll
+alle 5 Min). Die **Anzahl** der Reaktionen zeigt Discord automatisch unter jeder
+Reaktion an – die vier Reaktionen werden vorab gesetzt (Legende in der Meldung).
 
 ## Status-Reaktionen (optional – benötigt einen Bot)
 

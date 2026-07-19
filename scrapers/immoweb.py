@@ -127,6 +127,9 @@ class ImmowebScraper(BaseScraper):
             desc_parts.append(f"{int(surface)} m²")
         description = " · ".join(desc_parts) if desc_parts else None
 
+        publication = data.get("publication") or {}
+        posted_at = publication.get("creationDate") or publication.get("lastModificationDate")
+
         return Listing(
             source=self.name,
             listing_id=listing_id,
@@ -137,4 +140,5 @@ class ImmowebScraper(BaseScraper):
             description=description,
             bedrooms=bedrooms,
             property_kind=kind,
+            posted_at=posted_at,
         )

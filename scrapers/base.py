@@ -35,6 +35,9 @@ class Listing:
     bedrooms: Optional[int] = None      # Anzahl Schlafzimmer, falls bekannt
     property_kind: Optional[str] = None  # z. B. "room", "studio", "apartment", "house"
 
+    # ISO-Zeitstempel, wann das Inserat online ging (falls die Quelle das liefert).
+    posted_at: Optional[str] = None
+
     @property
     def key(self) -> str:
         """Zusammengesetzter Primaerschluessel, z. B. 'huurwoningen:5178b652'."""

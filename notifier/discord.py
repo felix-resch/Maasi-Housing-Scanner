@@ -10,6 +10,7 @@ from __future__ import annotations
 import logging
 import time
 import urllib.parse
+from datetime import datetime, timezone
 
 import requests
 
@@ -35,6 +36,34 @@ _WEBSITES = {
 
 def _website_for(listing, source_label: str | None) -> str:
     return _WEBSITES.get(listing.source, source_label or listing.source)
+
+
+def _iso_to_unix(value) -> int | None:
+    """ISO-Zeitstempel -> Unix-Sekunden (fuer Discords dynamische Zeitanzeige)."""
+    if not value:
+        return None
+    try:
+        text = str(value).replace("Z", "+00:00")
+        dt = datetime.fromisoformat(text)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return int(dt.timestamp())
+    except (ValueError, TypeError):
+        return None
+
+
+def _reaction_legend(reactions: dict | None) -> str | None:
+    """Zeile 'Emoji Bedeutung · ...' aus der Reaktions-Config bauen."""
+    if not reactions or not reactions.get("enabled", True):
+        return None
+    if not reactions.get("legend", True):
+        return None
+    parts = []
+    for item in reactions.get("items") or []:
+        if isinstance(item, dict) and item.get("emoji"):
+            label = item.get("label")
+            parts.append(f"{item['emoji']} {label}" if label else str(item["emoji"]))
+    return " · ".join(parts) if parts else None
 
 
 # Sprachen, die jeder Meldung beigelegt werden (Reihenfolge = Anzeige).
@@ -90,7 +119,12 @@ def _application_block(listing, application: dict | None) -> str | None:
     return "\n".join(parts) if len(parts) > 2 else None
 
 
-def _build_payload(listing, source_label: str | None, application: dict | None) -> dict:
+def _build_payload(
+    listing,
+    source_label: str | None,
+    application: dict | None,
+    reactions: dict | None = None,
+) -> dict:
     website = _website_for(listing, source_label)
     embed: dict = {
         "title": (listing.title or "Neues Inserat")[:256],
@@ -105,17 +139,31 @@ def _build_payload(listing, source_label: str | None, application: dict | None) 
     if listing.description:
         description_lines.append(listing.description)
 
+    # Online seit: dynamischer Discord-Zeitstempel (zeigt sich in der lokalen
+    # Zeit des Betrachters, inkl. relativer Angabe wie "vor 2 Stunden").
+    posted_unix = _iso_to_unix(listing.posted_at)
+    if posted_unix:
+        description_lines.append(f"🕒 Online seit: <t:{posted_unix}:f> (<t:{posted_unix}:R>)")
+
     app_block = _application_block(listing, application)
     if app_block:
         description_lines.append("")
         description_lines.append(app_block)
+
+    legend = _reaction_legend(reactions)
+    if legend:
+        description_lines.append(f"\n*{legend}*")
 
     embed["description"] = "\n".join(description_lines)[:4096]
 
     if listing.image_url:
         embed["image"] = {"url": listing.image_url}
 
-    embed["footer"] = {"text": f"Quelle: {website}"}
+    # Zeitpunkt, zu dem der Watcher das Inserat gefunden hat (Discord zeigt ihn
+    # neben dem Footer an, lokalisiert). Fuer Quellen ohne eigenes Online-Datum
+    # ist das der beste Naeherungswert (Poll alle 5 Min).
+    embed["timestamp"] = datetime.now(timezone.utc).isoformat()
+    embed["footer"] = {"text": f"Quelle: {website} · gefunden"}
 
     return {"embeds": [embed]}
 
@@ -179,7 +227,7 @@ def send_listing(
     gesetzt. Gibt True bei erfolgreichem Versand zurueck (unabhaengig davon, ob
     die Reaktionen klappten), sonst False.
     """
-    payload = _build_payload(listing, source_label, application)
+    payload = _build_payload(listing, source_label, application, reactions)
 
     # wait=true -> Discord liefert die erstellte Nachricht (id + channel_id)
     # zurueck, was wir zum Setzen der Reaktionen brauchen.

@@ -170,6 +170,8 @@ class MghousingScraper(BaseScraper):
             desc_parts.append("Furnished")
         description = " · ".join(desc_parts) if desc_parts else None
 
+        posted_at = doc.get("publishedAt") or doc.get("createdAt")
+
         return Listing(
             source=self.name,
             listing_id=str(listing_id),
@@ -180,4 +182,5 @@ class MghousingScraper(BaseScraper):
             description=description,
             bedrooms=bedrooms,
             property_kind=property_kind,
+            posted_at=posted_at,
         )

@@ -26,11 +26,19 @@ state_db: "state.db"
 # Reaktionen einfach uebersprungen - die Meldung selbst kommt trotzdem an.
 reactions:
   enabled: true
+  # legend: true -> Emoji + Bedeutung werden zusaetzlich als Zeile in die
+  # Meldung geschrieben. Die tatsaechliche ANZAHL der Reaktionen zeigt Discord
+  # automatisch unter jeder Reaktion an (das kann kein Embed-Text leisten).
+  legend: true
   items:
-    - emoji: "✅"   # beworben
-    - emoji: "❌"   # werde ich nicht bewerben
-    - emoji: "❓"   # unsicher
-    - emoji: "⏰"   # muss ich mich noch bewerben
+    - emoji: "✅"
+      label: "beworben"
+    - emoji: "❌"
+      label: "nicht bewerben"
+    - emoji: "❓"
+      label: "unsicher"
+    - emoji: "⏰"
+      label: "noch bewerben"
 
 # Bewerbungstexte werden aktuell NICHT an die Meldung gehaengt (enabled: false).
 # Die Texte bleiben hier stehen, falls du sie spaeter wieder aktivieren willst.
