@@ -11,3 +11,18 @@
 2026-07-19 10:20:23,311 INFO immoweb: 47 Angebote
 2026-07-19 10:20:23,353 INFO Quelle 'immoweb': 47 Treffer, 47 neu (Baseline, still gespeichert)
 2026-07-19 10:20:23,353 INFO Lauf beendet: 81 Treffer gesamt, 81 neu gesamt
+2026-07-19 11:34:32,748 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-19 11:34:33,895 INFO kamernet: 17 Listings im HTML
+2026-07-19 11:34:33,895 INFO kamernet: 17 Listings nach Filterung
+2026-07-19 11:34:33,896 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-07-19 11:34:38,343 INFO mghousing: API lieferte 44 Objekte
+2026-07-19 11:34:38,343 INFO mghousing: 10 Objekte nach Filterung
+2026-07-19 11:34:38,346 INFO Quelle 'mghousing': 10 Treffer, 0 neu
+2026-07-19 11:34:39,175 INFO wmm: 10 Angebote
+2026-07-19 11:34:39,458 INFO Quelle 'wmm': 10 Treffer, 10 neu (Baseline, still gespeichert)
+2026-07-19 11:34:40,082 INFO maasland: 7 Angebote
+2026-07-19 11:34:40,082 INFO Quelle 'maasland': 7 Treffer, 0 neu
+2026-07-19 11:34:41,100 INFO immoweb: 47 Angebote
+2026-07-19 11:34:43,544 INFO Gesendet: Goethalsstraat, 8620 Nieuwpoort | €890 p.m. | https://www.immoweb.be/en/classified/21721156
+2026-07-19 11:34:43,545 INFO Quelle 'immoweb': 47 Treffer, 1 neu
+2026-07-19 11:34:43,545 INFO Lauf beendet: 91 Treffer gesamt, 11 neu gesamt
