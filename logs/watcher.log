@@ -131,3 +131,17 @@
 2026-07-19 20:38:34,597 INFO immoweb: 40 Angebote
 2026-07-19 20:38:34,598 INFO Quelle 'immoweb': 40 Treffer, 0 neu
 2026-07-19 20:38:34,598 INFO Lauf beendet: 57 Treffer gesamt, 0 neu gesamt
+2026-07-19 21:35:09,048 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-19 21:35:09,723 INFO kamernet: 17 Listings im HTML
+2026-07-19 21:35:09,723 INFO kamernet: 17 Listings nach Filterung
+2026-07-19 21:35:12,128 INFO Gesendet: Koningsplein flat, Maastricht | €900 p.m. | https://kamernet.nl/en/for-rent/room-maastricht/koningsplein-flat/room-2390689
+2026-07-19 21:35:12,128 INFO Quelle 'kamernet': 17 Treffer, 1 neu
+2026-07-19 21:35:14,609 INFO mghousing: API lieferte 44 Objekte
+2026-07-19 21:35:14,609 INFO mghousing: 10 Objekte nach Filterung
+2026-07-19 21:35:14,611 INFO Quelle 'mghousing': 10 Treffer, 0 neu
+2026-07-19 21:35:34,651 WARNING Quelle 'wmm' nicht erreichbar: HTTPSConnectionPool(host='wmm.nl', port=443): Max retries exceeded with url: /en/offers (Caused by ConnectTimeoutError(<HTTPSConnection(host='wmm.nl', port=443) at 0x7fcbd069baa0>, 'Connection to wmm.nl timed out. (connect timeout=20)'))
+2026-07-19 21:35:35,143 INFO maasland: 7 Angebote
+2026-07-19 21:35:35,144 INFO Quelle 'maasland': 7 Treffer, 0 neu
+2026-07-19 21:35:36,122 INFO immoweb: 40 Angebote
+2026-07-19 21:35:36,123 INFO Quelle 'immoweb': 40 Treffer, 0 neu
+2026-07-19 21:35:36,123 INFO Lauf beendet: 74 Treffer gesamt, 1 neu gesamt
