@@ -27,7 +27,7 @@ state_db: "state.db"
 reactions:
   enabled: true
   items:
-    - emoji: "➡️"   # beworben
+    - emoji: "✅"   # beworben
     - emoji: "❌"   # werde ich nicht bewerben
     - emoji: "❓"   # unsicher
     - emoji: "⏰"   # muss ich mich noch bewerben
