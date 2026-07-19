@@ -53,3 +53,17 @@
 2026-07-19 14:10:00,833 INFO immoweb: 40 Angebote
 2026-07-19 14:10:00,833 INFO Quelle 'immoweb': 40 Treffer, 0 neu
 2026-07-19 14:10:00,833 INFO Lauf beendet: 74 Treffer gesamt, 0 neu gesamt
+2026-07-19 15:16:22,464 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-19 15:16:23,067 INFO kamernet: 17 Listings im HTML
+2026-07-19 15:16:23,067 INFO kamernet: 17 Listings nach Filterung
+2026-07-19 15:16:25,012 INFO Gesendet: Lochterstraat, Maastricht | €750 p.m. | https://kamernet.nl/en/for-rent/studio-maastricht/lochterstraat/studio-2390848
+2026-07-19 15:16:25,012 INFO Quelle 'kamernet': 17 Treffer, 1 neu
+2026-07-19 15:16:27,264 INFO mghousing: API lieferte 44 Objekte
+2026-07-19 15:16:27,264 INFO mghousing: 10 Objekte nach Filterung
+2026-07-19 15:16:27,266 INFO Quelle 'mghousing': 10 Treffer, 0 neu
+2026-07-19 15:16:47,309 WARNING Quelle 'wmm' nicht erreichbar: HTTPSConnectionPool(host='wmm.nl', port=443): Max retries exceeded with url: /en/offers (Caused by ConnectTimeoutError(<HTTPSConnection(host='wmm.nl', port=443) at 0x7f63cc72b920>, 'Connection to wmm.nl timed out. (connect timeout=20)'))
+2026-07-19 15:16:47,765 INFO maasland: 7 Angebote
+2026-07-19 15:16:47,765 INFO Quelle 'maasland': 7 Treffer, 0 neu
+2026-07-19 15:16:48,713 INFO immoweb: 40 Angebote
+2026-07-19 15:16:48,714 INFO Quelle 'immoweb': 40 Treffer, 0 neu
+2026-07-19 15:16:48,714 INFO Lauf beendet: 74 Treffer gesamt, 1 neu gesamt
