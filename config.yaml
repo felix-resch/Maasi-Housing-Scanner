@@ -25,31 +25,55 @@ application:
 
   single:
     en: |
-      Dear landlord,
-      I'm Felix (22), an incoming Master's student at SBE, Maastricht University, moving from Germany this September and still looking for accommodation. Your place at {title} would suit me perfectly. A parental guarantee is available.
-      Could I arrange a viewing (in person or virtual) soon? Do you need any further information?
+      Dear Landlord,
+
+      I am an incoming master's student at SBE from Germany, currently looking for accommodation.
+
+      My name is Felix Resch (22 years old), and I enjoy cycling, running, and going to the gym.
+
+      I have already lived in Düsseldorf, Koblenz, and Frankfurt (all in Germany), as well as in Brescia, Italy, as part of my studies and internships.
+
+      Your room would suit my needs perfectly! A parental guarantee can be provided if required.
+
       Kind regards,
       Felix Resch
     nl: |
       Geachte verhuurder,
-      Ik ben Felix (22), aankomend masterstudent aan SBE, Universiteit Maastricht. Ik verhuis in september vanuit Duitsland en ben nog op zoek naar woonruimte. Uw woning aan {title} zou perfect passen. Een ouderlijke garantstelling is mogelijk.
-      Zou ik binnenkort langs kunnen komen voor een bezichtiging (fysiek of virtueel)? Heeft u nog verdere informatie nodig?
+
+      Ik ben een aankomend masterstudent aan SBE uit Duitsland en momenteel op zoek naar woonruimte.
+
+      Mijn naam is Felix Resch (22 jaar oud), en ik houd van fietsen, hardlopen en naar de sportschool gaan.
+
+      Ik heb al gewoond in Düsseldorf, Koblenz en Frankfurt (allemaal in Duitsland), evenals in Brescia, Italië, in het kader van mijn studie en stages.
+
+      Uw kamer zou perfect aansluiten bij mijn wensen! Een ouderlijke garantstelling kan indien nodig worden verstrekt.
+
       Met vriendelijke groet,
       Felix Resch
 
   shared:
     en: |
-      Dear Sir or Madam,
-      We are two close friends and students (Jonas, 22 & Felix, 22) starting our Master's at Maastricht University this September. Your property at {title} looks like the ideal place for us. A parental guarantee is available.
-      Would a viewing (in person or virtual) be possible soon? Do you need any further information?
+      Dear Landlord,
+
+      We are two close friends and students (Jonas, 23 & Felix, 22) from Germany, starting our Master's degrees at SBE this September.
+
+      We have already lived in Koblenz, Düsseldorf, Frankfurt (all in Germany) as well as in Brescia, Italy, and Vance, Alabama, USA.
+
+      Your property looks like the ideal place for us to share. A parental guarantee can be provided if required.
+
       Kind regards,
-      Felix Resch
+      Jonas Esper & Felix Resch
     nl: |
-      Geachte heer/mevrouw,
-      Wij zijn twee bevriende studenten (Jonas, 22 & Felix, 22) die in september aan onze master aan de Universiteit Maastricht beginnen. Uw woning aan {title} lijkt de ideale plek voor ons. Een ouderlijke garantstelling is mogelijk.
-      Zou een bezichtiging (fysiek of virtueel) binnenkort mogelijk zijn? Heeft u nog verdere informatie nodig?
+      Geachte verhuurder,
+
+      Wij zijn twee goede vrienden en studenten (Jonas, 23 & Felix, 22) uit Duitsland en beginnen dit september aan onze masteropleiding aan SBE.
+
+      Wij hebben al gewoond in Koblenz, Düsseldorf en Frankfurt (allemaal in Duitsland), evenals in Brescia, Italië, en Vance, Alabama, VS.
+
+      Uw woning lijkt de ideale plek voor ons om samen te delen. Een ouderlijke garantstelling kan indien nodig worden verstrekt.
+
       Met vriendelijke groet,
-      Felix Resch
+      Jonas Esper & Felix Resch
 
 sources:
   - name: huurwoningen
@@ -86,3 +110,25 @@ sources:
     # Nur diese Staedte melden. Leere Liste = keine Ortsfilterung.
     cities:
       - Maastricht
+
+  - name: wmm
+    enabled: true
+    # Woningmakelaardij Maastricht - serverseitig gerendertes HTML.
+    type: static_html
+    url: "https://wmm.nl/en/offers"
+
+  - name: maasland
+    enabled: true
+    # Maasland Relocation - alle Angebote unter /en/properties (HTML).
+    type: static_html
+    url: "https://maaslandrelocation.nl/en/properties"
+
+  - name: immoweb
+    enabled: true
+    # Belgische Grenzregion bei Maastricht. Die URL enthaelt das gezeichnete
+    # Suchgebiet (geoSearchAreas-Polygon) + maxPrice. WICHTIG: einfache
+    # Anfuehrungszeichen, damit die Backslashes im Polygon literal bleiben.
+    type: static_html
+    url: 'https://www.immoweb.be/en/search/apartment/for-rent?countries=BE&geoSearchAreas=uwzuHyr_b@aBjcHvIfzE~i@|mMle@t|Eb{AppExhA~}Ahv@t^~}@`PbuA{Cvq@oRxmBgcAz|AcyAhgAq{AhdAc`CloBkrGzeAkvBb`BmfFnQ}lA`B}fLwn@o`Bi\ca@cj@e\oqHchA{zUzwE&maxPrice=2000&page=1&orderBy=relevance'
+    # Nur diese Orte (belgische Nachbargemeinden). Leer = kein Ortsfilter.
+    cities: []

@@ -10,18 +10,25 @@ Quellen:
 |---|---|---|
 | [kamernet.nl](https://kamernet.nl/en/for-rent/properties-maastricht) | `__NEXT_DATA__`-JSON im HTML | ✅ funktioniert (v. a. Zimmer/Studios) |
 | [mghousing.nl](https://mghousing.nl/en/listings) | JSON-API `/api/listings` (Payload CMS) | ✅ funktioniert |
+| [wmm.nl](https://wmm.nl/en/offers) | HTML-Parsing (`a.item`-Karten) | ✅ funktioniert |
+| [maaslandrelocation.nl](https://maaslandrelocation.nl/en/properties) | HTML-Parsing (`.offer`-Karten) | ✅ funktioniert |
+| [immoweb.be](https://www.immoweb.be) | eingebettetes `:classified`-JSON pro Karte | ✅ funktioniert (belgische Grenzregion) |
 | [huurwoningen.nl](https://www.huurwoningen.nl/en/in/maastricht/) | HTML-Parsing (serverseitig) | ⛔ Cloudflare-Challenge – Scraper drin, wird pro Lauf still übersprungen |
 
-> **Keine Browser-Automatisierung (Playwright) nötig.** mghousing liefert eine
-> öffentliche JSON-API, Kamernet bettet die Suchergebnisse als JSON ins HTML ein
-> (Next.js `__NEXT_DATA__`) – ein einfacher HTTP-GET reicht für beide.
+> **Keine Browser-Automatisierung (Playwright) nötig** – jede aktive Quelle liefert
+> die Daten per einfachem HTTP-GET (JSON-API, eingebettetes JSON oder HTML).
+>
+> **immoweb.be** deckt die belgischen Nachbargemeinden (Lanaken, Riemst,
+> Bilzen, Vlijtingen …) über das in der Such-URL gespeicherte Gebiets-Polygon ab.
+> Immoweb setzt (inkonsistenten) DataDome-Bot-Schutz ein; ein evtl. leeres/
+> geblocktes Ergebnis wird pro Lauf toleriert. Auf GitHub-Actions-IPs kann die
+> Trefferquote schwanken.
 >
 > **huurwoningen.nl** steht hinter einer Cloudflare-Bot-Challenge
 > (`cf-mitigated: challenge`). Ein einfacher HTTP-Client kommt dort nicht durch;
 > das Umgehen von Cloudflare ist ein bewusstes Nicht-Ziel. Der Scraper bleibt
 > registriert (falls sich das Verhalten ändert) und wird bei einem 403 mit einer
-> einzeiligen Warnung übersprungen, ohne den Lauf zu stören. Als Ersatz für
-> huurwoningen eignet sich dessen eigener „Newest properties"-E-Mail-Alert.
+> einzeiligen Warnung übersprungen. (Pararius: ebenfalls Cloudflare.)
 
 ## Funktionsweise
 
