@@ -198,3 +198,17 @@
 2026-07-20 04:56:14,040 INFO immoweb: 40 Angebote
 2026-07-20 04:56:14,041 INFO Quelle 'immoweb': 40 Treffer, 0 neu
 2026-07-20 04:56:14,041 INFO Lauf beendet: 83 Treffer gesamt, 0 neu gesamt
+2026-07-20 08:12:53,861 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-20 08:12:55,111 INFO kamernet: 17 Listings im HTML
+2026-07-20 08:12:55,111 INFO kamernet: 17 Listings nach Filterung
+2026-07-20 08:12:57,865 INFO Gesendet: Brusselsestraat, Maastricht | €1.395 p.m. | https://kamernet.nl/en/for-rent/apartment-maastricht/brusselsestraat/apartment-2393936
+2026-07-20 08:12:57,866 INFO Quelle 'kamernet': 17 Treffer, 1 neu
+2026-07-20 08:13:00,822 INFO mghousing: API lieferte 44 Objekte
+2026-07-20 08:13:00,823 INFO mghousing: 10 Objekte nach Filterung
+2026-07-20 08:13:00,824 INFO Quelle 'mghousing': 10 Treffer, 0 neu
+2026-07-20 08:13:20,880 WARNING Quelle 'wmm' nicht erreichbar: HTTPSConnectionPool(host='wmm.nl', port=443): Max retries exceeded with url: /en/offers (Caused by ConnectTimeoutError(<HTTPSConnection(host='wmm.nl', port=443) at 0x7f11ba47d550>, 'Connection to wmm.nl timed out. (connect timeout=20)'))
+2026-07-20 08:13:21,493 INFO maasland: 6 Angebote
+2026-07-20 08:13:21,493 INFO Quelle 'maasland': 6 Treffer, 0 neu
+2026-07-20 08:13:22,694 INFO immoweb: 40 Angebote
+2026-07-20 08:13:22,694 INFO Quelle 'immoweb': 40 Treffer, 0 neu
+2026-07-20 08:13:22,695 INFO Lauf beendet: 73 Treffer gesamt, 1 neu gesamt
