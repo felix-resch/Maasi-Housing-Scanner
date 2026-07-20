@@ -212,3 +212,18 @@
 2026-07-20 08:13:22,694 INFO immoweb: 40 Angebote
 2026-07-20 08:13:22,694 INFO Quelle 'immoweb': 40 Treffer, 0 neu
 2026-07-20 08:13:22,695 INFO Lauf beendet: 73 Treffer gesamt, 1 neu gesamt
+2026-07-20 11:16:38,116 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-20 11:16:39,115 INFO kamernet: 17 Listings im HTML
+2026-07-20 11:16:39,115 INFO kamernet: 17 Listings nach Filterung
+2026-07-20 11:16:39,116 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-07-20 11:16:41,586 INFO mghousing: API lieferte 35 Objekte
+2026-07-20 11:16:41,586 INFO mghousing: 8 Objekte nach Filterung
+2026-07-20 11:16:44,073 INFO Gesendet: Scharnerweg 37 | €885 p.m. | https://mghousing.nl/en/listings/rentals/6a5df1a6a3c00c760a1c720e
+2026-07-20 11:16:44,073 INFO Quelle 'mghousing': 8 Treffer, 1 neu
+2026-07-20 11:17:04,123 WARNING Quelle 'wmm' nicht erreichbar: HTTPSConnectionPool(host='wmm.nl', port=443): Max retries exceeded with url: /en/offers (Caused by ConnectTimeoutError(<HTTPSConnection(host='wmm.nl', port=443) at 0x7f95c3e2cfe0>, 'Connection to wmm.nl timed out. (connect timeout=20)'))
+2026-07-20 11:17:04,684 INFO maasland: 6 Angebote
+2026-07-20 11:17:04,684 INFO Quelle 'maasland': 6 Treffer, 0 neu
+2026-07-20 11:17:05,927 INFO immoweb: 39 Angebote
+2026-07-20 11:17:08,376 INFO Gesendet: Maastrichtersteenweg, 3770 Riemst | €785 p.m. | https://www.immoweb.be/en/classified/21721741
+2026-07-20 11:17:08,376 INFO Quelle 'immoweb': 39 Treffer, 1 neu
+2026-07-20 11:17:08,376 INFO Lauf beendet: 70 Treffer gesamt, 2 neu gesamt
