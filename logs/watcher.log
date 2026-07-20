@@ -274,3 +274,17 @@
 2026-07-20 17:03:12,340 INFO immoweb: 39 Angebote
 2026-07-20 17:03:12,341 INFO Quelle 'immoweb': 39 Treffer, 0 neu
 2026-07-20 17:03:12,341 INFO Lauf beendet: 85 Treffer gesamt, 0 neu gesamt
+2026-07-20 19:05:19,692 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-20 19:05:20,860 INFO kamernet: 17 Listings im HTML
+2026-07-20 19:05:20,860 INFO kamernet: 17 Listings nach Filterung
+2026-07-20 19:05:23,553 INFO Gesendet: Tongerseweg, Maastricht | €995 p.m. | https://kamernet.nl/en/for-rent/studio-maastricht/tongerseweg/studio-2394226
+2026-07-20 19:05:23,554 INFO Quelle 'kamernet': 17 Treffer, 1 neu
+2026-07-20 19:05:26,559 INFO mghousing: API lieferte 35 Objekte
+2026-07-20 19:05:26,560 INFO mghousing: 8 Objekte nach Filterung
+2026-07-20 19:05:26,561 INFO Quelle 'mghousing': 8 Treffer, 0 neu
+2026-07-20 19:05:46,625 WARNING Quelle 'wmm' nicht erreichbar: HTTPSConnectionPool(host='wmm.nl', port=443): Max retries exceeded with url: /en/offers (Caused by ConnectTimeoutError(<HTTPSConnection(host='wmm.nl', port=443) at 0x7faaff6cfbf0>, 'Connection to wmm.nl timed out. (connect timeout=20)'))
+2026-07-20 19:05:47,290 INFO maasland: 6 Angebote
+2026-07-20 19:05:47,290 INFO Quelle 'maasland': 6 Treffer, 0 neu
+2026-07-20 19:05:48,963 INFO immoweb: 39 Angebote
+2026-07-20 19:05:48,963 INFO Quelle 'immoweb': 39 Treffer, 0 neu
+2026-07-20 19:05:48,963 INFO Lauf beendet: 70 Treffer gesamt, 1 neu gesamt
