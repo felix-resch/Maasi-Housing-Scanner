@@ -401,3 +401,21 @@
 2026-07-21 09:57:51,899 INFO immoweb: 39 Angebote
 2026-07-21 09:57:51,900 INFO Quelle 'immoweb': 39 Treffer, 0 neu
 2026-07-21 09:57:51,900 INFO Lauf beendet: 69 Treffer gesamt, 4 neu gesamt
+2026-07-21 11:54:33,788 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-21 11:54:34,976 INFO kamernet: 17 Listings im HTML
+2026-07-21 11:54:34,976 INFO kamernet: 17 Listings nach Filterung
+2026-07-21 11:54:34,977 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-07-21 11:54:37,580 INFO mghousing: API lieferte 35 Objekte
+2026-07-21 11:54:37,580 INFO mghousing: 7 Objekte nach Filterung
+2026-07-21 11:54:37,582 INFO Quelle 'mghousing': 7 Treffer, 0 neu
+2026-07-21 11:54:38,321 INFO wmm: 19 Angebote
+2026-07-21 11:54:41,623 INFO Gesendet: Bourgognestraat 68, Maastricht | €626,73 / month (incl.) | https://wmm.nl/en/offers/maastricht/bourgognestraat-68/7244
+2026-07-21 11:54:44,165 INFO Gesendet: Wycker Grachtstraat 46, Maastricht | €509,52 / month (incl.) | https://wmm.nl/en/offers/maastricht/wycker-grachtstraat-46/8158
+2026-07-21 11:54:46,520 INFO Gesendet: Alexander Battalaan 8, Maastricht | €647,23 / month (incl.) | https://wmm.nl/en/offers/maastricht/alexander-battalaan-8/8436
+2026-07-21 11:54:49,130 INFO Gesendet: Sint Maartenslaan 4, Maastricht | €797,59 / month (incl.) | https://wmm.nl/en/offers/maastricht/sint-maartenslaan-4/8561
+2026-07-21 11:54:49,131 INFO Quelle 'wmm': 19 Treffer, 4 neu
+2026-07-21 11:54:49,739 INFO maasland: 5 Angebote
+2026-07-21 11:54:49,740 INFO Quelle 'maasland': 5 Treffer, 0 neu
+2026-07-21 11:54:51,592 INFO immoweb: 39 Angebote
+2026-07-21 11:54:51,593 INFO Quelle 'immoweb': 39 Treffer, 0 neu
+2026-07-21 11:54:51,593 INFO Lauf beendet: 87 Treffer gesamt, 4 neu gesamt
