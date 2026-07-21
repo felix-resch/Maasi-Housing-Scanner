@@ -384,3 +384,20 @@
 2026-07-21 07:19:04,985 INFO immoweb: 39 Angebote
 2026-07-21 07:19:04,987 INFO Quelle 'immoweb': 39 Treffer, 0 neu
 2026-07-21 07:19:04,987 INFO Lauf beendet: 84 Treffer gesamt, 0 neu gesamt
+2026-07-21 09:57:19,203 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-21 09:57:20,729 INFO kamernet: 17 Listings im HTML
+2026-07-21 09:57:20,729 INFO kamernet: 17 Listings nach Filterung
+2026-07-21 09:57:22,869 INFO Gesendet: Orleansstraat, Maastricht | €550 p.m. | https://kamernet.nl/en/for-rent/room-maastricht/orleansstraat/room-2394294
+2026-07-21 09:57:24,810 INFO Gesendet: Bilserbaan, Maastricht | €1.250 p.m. | https://kamernet.nl/en/for-rent/apartment-maastricht/bilserbaan/apartment-2394292
+2026-07-21 09:57:26,946 INFO Gesendet: Statensingel, Maastricht | €1.150 p.m. | https://kamernet.nl/en/for-rent/studio-maastricht/statensingel/studio-2394287
+2026-07-21 09:57:28,877 INFO Gesendet: Meerssenerweg, Maastricht | €725 p.m. | https://kamernet.nl/en/for-rent/studio-maastricht/meerssenerweg/studio-2394184
+2026-07-21 09:57:28,877 INFO Quelle 'kamernet': 17 Treffer, 4 neu
+2026-07-21 09:57:30,524 INFO mghousing: API lieferte 35 Objekte
+2026-07-21 09:57:30,524 INFO mghousing: 8 Objekte nach Filterung
+2026-07-21 09:57:30,526 INFO Quelle 'mghousing': 8 Treffer, 0 neu
+2026-07-21 09:57:50,545 WARNING Quelle 'wmm' nicht erreichbar: HTTPSConnectionPool(host='wmm.nl', port=443): Max retries exceeded with url: /en/offers (Caused by ConnectTimeoutError(<HTTPSConnection(host='wmm.nl', port=443) at 0x7f8f57ce7c20>, 'Connection to wmm.nl timed out. (connect timeout=20)'))
+2026-07-21 09:57:50,956 INFO maasland: 5 Angebote
+2026-07-21 09:57:50,957 INFO Quelle 'maasland': 5 Treffer, 0 neu
+2026-07-21 09:57:51,899 INFO immoweb: 39 Angebote
+2026-07-21 09:57:51,900 INFO Quelle 'immoweb': 39 Treffer, 0 neu
+2026-07-21 09:57:51,900 INFO Lauf beendet: 69 Treffer gesamt, 4 neu gesamt
