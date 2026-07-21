@@ -432,3 +432,19 @@
 2026-07-21 14:02:57,669 INFO immoweb: 39 Angebote
 2026-07-21 14:02:57,669 INFO Quelle 'immoweb': 39 Treffer, 0 neu
 2026-07-21 14:02:57,669 INFO Lauf beendet: 68 Treffer gesamt, 0 neu gesamt
+2026-07-21 15:51:22,396 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-21 15:51:23,469 INFO kamernet: 17 Listings im HTML
+2026-07-21 15:51:23,469 INFO kamernet: 17 Listings nach Filterung
+2026-07-21 15:51:25,959 INFO Gesendet: Franquinetstraat, Maastricht | €525 p.m. | https://kamernet.nl/en/for-rent/room-maastricht/franquinetstraat/room-2394435
+2026-07-21 15:51:25,959 INFO Quelle 'kamernet': 17 Treffer, 1 neu
+2026-07-21 15:51:28,756 INFO mghousing: API lieferte 35 Objekte
+2026-07-21 15:51:28,756 INFO mghousing: 7 Objekte nach Filterung
+2026-07-21 15:51:28,758 INFO Quelle 'mghousing': 7 Treffer, 0 neu
+2026-07-21 15:51:29,624 INFO wmm: 18 Angebote
+2026-07-21 15:51:31,965 INFO Gesendet: Parallelweg 39, Maastricht | €795,00 / month (incl.) | https://wmm.nl/en/offers/maastricht/parallelweg-39/7266
+2026-07-21 15:51:31,966 INFO Quelle 'wmm': 18 Treffer, 1 neu
+2026-07-21 15:51:32,632 INFO maasland: 5 Angebote
+2026-07-21 15:51:32,632 INFO Quelle 'maasland': 5 Treffer, 0 neu
+2026-07-21 15:51:33,639 INFO immoweb: 39 Angebote
+2026-07-21 15:51:33,640 INFO Quelle 'immoweb': 39 Treffer, 0 neu
+2026-07-21 15:51:33,640 INFO Lauf beendet: 86 Treffer gesamt, 2 neu gesamt
