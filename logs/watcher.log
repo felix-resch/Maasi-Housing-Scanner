@@ -570,3 +570,21 @@
 2026-07-22 07:18:29,494 INFO immoweb: 39 Angebote
 2026-07-22 07:18:29,495 INFO Quelle 'immoweb': 39 Treffer, 0 neu
 2026-07-22 07:18:29,496 INFO Lauf beendet: 86 Treffer gesamt, 0 neu gesamt
+2026-07-22 09:44:29,660 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-22 09:44:30,582 INFO kamernet: 17 Listings im HTML
+2026-07-22 09:44:30,582 INFO kamernet: 17 Listings nach Filterung
+2026-07-22 09:44:30,583 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-07-22 09:44:32,802 INFO mghousing: API lieferte 35 Objekte
+2026-07-22 09:44:32,802 INFO mghousing: 7 Objekte nach Filterung
+2026-07-22 09:44:32,804 INFO Quelle 'mghousing': 7 Treffer, 0 neu
+2026-07-22 09:44:33,628 INFO wmm: 20 Angebote
+2026-07-22 09:44:35,910 INFO Gesendet: Brusselseweg 391, Maastricht | €735,00 / month (incl.) | https://wmm.nl/en/offers/maastricht/brusselseweg-391/7809
+2026-07-22 09:44:38,061 INFO Gesendet: Statensingel 173, Maastricht | €670,69 / month (incl.) | https://wmm.nl/en/offers/maastricht/statensingel-173/8443
+2026-07-22 09:44:40,151 INFO Gesendet: Statensingel 16, Maastricht | €659,04 / month (incl.) | https://wmm.nl/en/offers/maastricht/statensingel-16/9100
+2026-07-22 09:44:42,580 INFO Gesendet: Brusselsestraat 150, Maastricht | €525,58 / month (incl.) | https://wmm.nl/en/offers/maastricht/brusselsestraat-150/9541
+2026-07-22 09:44:42,581 INFO Quelle 'wmm': 20 Treffer, 4 neu
+2026-07-22 09:44:43,264 INFO maasland: 6 Angebote
+2026-07-22 09:44:43,265 INFO Quelle 'maasland': 6 Treffer, 0 neu
+2026-07-22 09:44:44,112 INFO immoweb: 39 Angebote
+2026-07-22 09:44:44,113 INFO Quelle 'immoweb': 39 Treffer, 0 neu
+2026-07-22 09:44:44,113 INFO Lauf beendet: 89 Treffer gesamt, 4 neu gesamt
