@@ -601,3 +601,19 @@
 2026-07-22 11:33:03,524 INFO immoweb: 39 Angebote
 2026-07-22 11:33:03,525 INFO Quelle 'immoweb': 39 Treffer, 0 neu
 2026-07-22 11:33:03,525 INFO Lauf beendet: 69 Treffer gesamt, 0 neu gesamt
+2026-07-22 13:08:38,207 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-22 13:08:38,980 INFO kamernet: 17 Listings im HTML
+2026-07-22 13:08:38,980 INFO kamernet: 17 Listings nach Filterung
+2026-07-22 13:08:38,981 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-07-22 13:08:40,910 INFO mghousing: API lieferte 35 Objekte
+2026-07-22 13:08:40,911 INFO mghousing: 7 Objekte nach Filterung
+2026-07-22 13:08:40,913 INFO Quelle 'mghousing': 7 Treffer, 0 neu
+2026-07-22 13:08:41,512 INFO wmm: 22 Angebote
+2026-07-22 13:08:43,746 INFO Gesendet: Franquinetstraat 6, Maastricht | €487,02 / month (incl.) | https://wmm.nl/en/offers/maastricht/franquinetstraat-6/8315
+2026-07-22 13:08:45,882 INFO Gesendet: Scharnerweg 78, Maastricht | €755,00 / month (incl.) | https://wmm.nl/en/offers/maastricht/scharnerweg-78/9249
+2026-07-22 13:08:45,883 INFO Quelle 'wmm': 22 Treffer, 2 neu
+2026-07-22 13:08:46,355 INFO maasland: 6 Angebote
+2026-07-22 13:08:46,355 INFO Quelle 'maasland': 6 Treffer, 0 neu
+2026-07-22 13:08:47,536 INFO immoweb: 39 Angebote
+2026-07-22 13:08:47,537 INFO Quelle 'immoweb': 39 Treffer, 0 neu
+2026-07-22 13:08:47,537 INFO Lauf beendet: 91 Treffer gesamt, 2 neu gesamt
