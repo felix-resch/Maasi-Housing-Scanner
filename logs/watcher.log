@@ -864,3 +864,17 @@
 2026-07-23 20:50:31,222 INFO immoweb: 39 Angebote
 2026-07-23 20:50:31,223 INFO Quelle 'immoweb': 39 Treffer, 0 neu
 2026-07-23 20:50:31,224 INFO Lauf beendet: 88 Treffer gesamt, 0 neu gesamt
+2026-07-23 21:59:44,343 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-23 21:59:45,728 INFO kamernet: 17 Listings im HTML
+2026-07-23 21:59:45,728 INFO kamernet: 17 Listings nach Filterung
+2026-07-23 21:59:45,729 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-07-23 21:59:48,806 INFO mghousing: API lieferte 37 Objekte
+2026-07-23 21:59:48,807 INFO mghousing: 8 Objekte nach Filterung
+2026-07-23 21:59:48,809 INFO Quelle 'mghousing': 8 Treffer, 0 neu
+2026-07-23 22:00:08,857 WARNING Quelle 'wmm' nicht erreichbar: HTTPSConnectionPool(host='wmm.nl', port=443): Max retries exceeded with url: /en/offers (Caused by ConnectTimeoutError(<HTTPSConnection(host='wmm.nl', port=443) at 0x7fed88413e90>, 'Connection to wmm.nl timed out. (connect timeout=20)'))
+2026-07-23 22:00:09,550 INFO maasland: 5 Angebote
+2026-07-23 22:00:09,550 INFO Quelle 'maasland': 5 Treffer, 0 neu
+2026-07-23 22:00:10,806 INFO immoweb: 39 Angebote
+2026-07-23 22:00:13,841 INFO Gesendet: Ophemmerstraat, 3770 Vlijtingen | €865 p.m. | https://www.immoweb.be/en/classified/21727407
+2026-07-23 22:00:13,842 INFO Quelle 'immoweb': 39 Treffer, 1 neu
+2026-07-23 22:00:13,842 INFO Lauf beendet: 69 Treffer gesamt, 1 neu gesamt
