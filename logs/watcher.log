@@ -1003,3 +1003,16 @@
 2026-07-24 15:51:05,564 INFO Gesendet: Meershoven, 3740 Bilzen | €1.100 p.m. | https://www.immoweb.be/en/classified/21729209
 2026-07-24 15:51:05,564 INFO Quelle 'immoweb': 40 Treffer, 1 neu
 2026-07-24 15:51:05,564 INFO Lauf beendet: 67 Treffer gesamt, 1 neu gesamt
+2026-07-24 17:23:02,517 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-24 17:23:03,236 INFO kamernet: 17 Listings im HTML
+2026-07-24 17:23:03,236 INFO kamernet: 17 Listings nach Filterung
+2026-07-24 17:23:03,237 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-07-24 17:23:05,710 INFO mghousing: API lieferte 37 Objekte
+2026-07-24 17:23:05,710 INFO mghousing: 5 Objekte nach Filterung
+2026-07-24 17:23:05,712 INFO Quelle 'mghousing': 5 Treffer, 0 neu
+2026-07-24 17:23:25,757 WARNING Quelle 'wmm' nicht erreichbar: HTTPSConnectionPool(host='wmm.nl', port=443): Max retries exceeded with url: /en/offers (Caused by ConnectTimeoutError(<HTTPSConnection(host='wmm.nl', port=443) at 0x7f9ecb313710>, 'Connection to wmm.nl timed out. (connect timeout=20)'))
+2026-07-24 17:23:26,252 INFO maasland: 5 Angebote
+2026-07-24 17:23:26,252 INFO Quelle 'maasland': 5 Treffer, 0 neu
+2026-07-24 17:23:27,345 INFO immoweb: 40 Angebote
+2026-07-24 17:23:27,346 INFO Quelle 'immoweb': 40 Treffer, 0 neu
+2026-07-24 17:23:27,346 INFO Lauf beendet: 67 Treffer gesamt, 0 neu gesamt
