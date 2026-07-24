@@ -892,3 +892,17 @@
 2026-07-23 23:07:49,527 INFO immoweb: 39 Angebote
 2026-07-23 23:07:49,528 INFO Quelle 'immoweb': 39 Treffer, 0 neu
 2026-07-23 23:07:49,528 INFO Lauf beendet: 88 Treffer gesamt, 0 neu gesamt
+2026-07-24 00:10:34,238 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-24 00:10:35,124 INFO kamernet: 17 Listings im HTML
+2026-07-24 00:10:35,124 INFO kamernet: 17 Listings nach Filterung
+2026-07-24 00:10:35,125 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-07-24 00:10:40,715 INFO mghousing: API lieferte 37 Objekte
+2026-07-24 00:10:40,715 INFO mghousing: 8 Objekte nach Filterung
+2026-07-24 00:10:40,717 INFO Quelle 'mghousing': 8 Treffer, 0 neu
+2026-07-24 00:10:41,547 INFO wmm: 19 Angebote
+2026-07-24 00:10:41,547 INFO Quelle 'wmm': 19 Treffer, 0 neu
+2026-07-24 00:10:41,992 INFO maasland: 5 Angebote
+2026-07-24 00:10:41,993 INFO Quelle 'maasland': 5 Treffer, 0 neu
+2026-07-24 00:10:42,975 INFO immoweb: 39 Angebote
+2026-07-24 00:10:42,976 INFO Quelle 'immoweb': 39 Treffer, 0 neu
+2026-07-24 00:10:42,977 INFO Lauf beendet: 88 Treffer gesamt, 0 neu gesamt
