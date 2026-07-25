@@ -1132,3 +1132,18 @@
 2026-07-25 07:18:10,813 INFO immoweb: 40 Angebote
 2026-07-25 07:18:10,815 INFO Quelle 'immoweb': 40 Treffer, 0 neu
 2026-07-25 07:18:10,815 INFO Lauf beendet: 83 Treffer gesamt, 0 neu gesamt
+2026-07-25 09:15:33,115 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-25 09:15:34,766 INFO kamernet: 17 Listings im HTML
+2026-07-25 09:15:34,766 INFO kamernet: 17 Listings nach Filterung
+2026-07-25 09:15:34,767 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-07-25 09:15:39,259 INFO mghousing: API lieferte 37 Objekte
+2026-07-25 09:15:39,259 INFO mghousing: 5 Objekte nach Filterung
+2026-07-25 09:15:39,261 INFO Quelle 'mghousing': 5 Treffer, 0 neu
+2026-07-25 09:15:39,941 INFO wmm: 16 Angebote
+2026-07-25 09:15:39,941 INFO Quelle 'wmm': 16 Treffer, 0 neu
+2026-07-25 09:15:40,583 INFO maasland: 5 Angebote
+2026-07-25 09:15:40,583 INFO Quelle 'maasland': 5 Treffer, 0 neu
+2026-07-25 09:15:41,704 INFO immoweb: 41 Angebote
+2026-07-25 09:15:44,382 INFO Gesendet: Onze-Lieve-Vrouwestraat, 3690 Zutendaal | €1.450 p.m. | https://www.immoweb.be/en/classified/21729727
+2026-07-25 09:15:44,383 INFO Quelle 'immoweb': 41 Treffer, 1 neu
+2026-07-25 09:15:44,383 INFO Lauf beendet: 84 Treffer gesamt, 1 neu gesamt
