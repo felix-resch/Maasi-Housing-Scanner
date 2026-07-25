@@ -1147,3 +1147,16 @@
 2026-07-25 09:15:44,382 INFO Gesendet: Onze-Lieve-Vrouwestraat, 3690 Zutendaal | €1.450 p.m. | https://www.immoweb.be/en/classified/21729727
 2026-07-25 09:15:44,383 INFO Quelle 'immoweb': 41 Treffer, 1 neu
 2026-07-25 09:15:44,383 INFO Lauf beendet: 84 Treffer gesamt, 1 neu gesamt
+2026-07-25 10:48:40,221 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-25 10:48:41,055 INFO kamernet: 17 Listings im HTML
+2026-07-25 10:48:41,056 INFO kamernet: 17 Listings nach Filterung
+2026-07-25 10:48:41,056 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-07-25 10:48:43,408 INFO mghousing: API lieferte 37 Objekte
+2026-07-25 10:48:43,409 INFO mghousing: 5 Objekte nach Filterung
+2026-07-25 10:48:43,410 INFO Quelle 'mghousing': 5 Treffer, 0 neu
+2026-07-25 10:49:03,450 WARNING Quelle 'wmm' nicht erreichbar: HTTPSConnectionPool(host='wmm.nl', port=443): Max retries exceeded with url: /en/offers (Caused by ConnectTimeoutError(<HTTPSConnection(host='wmm.nl', port=443) at 0x7f3dfc3e3830>, 'Connection to wmm.nl timed out. (connect timeout=20)'))
+2026-07-25 10:49:04,000 INFO maasland: 5 Angebote
+2026-07-25 10:49:04,001 INFO Quelle 'maasland': 5 Treffer, 0 neu
+2026-07-25 10:49:05,131 INFO immoweb: 41 Angebote
+2026-07-25 10:49:05,132 INFO Quelle 'immoweb': 41 Treffer, 0 neu
+2026-07-25 10:49:05,132 INFO Lauf beendet: 68 Treffer gesamt, 0 neu gesamt
