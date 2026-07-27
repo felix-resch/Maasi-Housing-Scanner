@@ -1509,3 +1509,18 @@
 2026-07-26 23:15:08,427 INFO immoweb: 41 Angebote
 2026-07-26 23:15:08,428 INFO Quelle 'immoweb': 41 Treffer, 0 neu
 2026-07-26 23:15:08,429 INFO Lauf beendet: 80 Treffer gesamt, 0 neu gesamt
+2026-07-27 00:17:16,989 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-27 00:17:18,638 INFO kamernet: 17 Listings im HTML
+2026-07-27 00:17:18,638 INFO kamernet: 17 Listings nach Filterung
+2026-07-27 00:17:18,639 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-07-27 00:17:20,294 INFO mghousing: API lieferte 37 Objekte
+2026-07-27 00:17:20,294 INFO mghousing: 5 Objekte nach Filterung
+2026-07-27 00:17:20,296 INFO Quelle 'mghousing': 5 Treffer, 0 neu
+2026-07-27 00:17:20,872 INFO wmm: 12 Angebote
+2026-07-27 00:17:20,872 INFO Quelle 'wmm': 12 Treffer, 0 neu
+2026-07-27 00:17:21,519 INFO maasland: 3 Angebote
+2026-07-27 00:17:24,163 INFO Gesendet: Sint Annalaan, Maastricht Binnenstad | €676.47 /month (incl) | https://maaslandrelocation.nl/en/apartment/l1px0pko/sint-annalaan-maastricht
+2026-07-27 00:17:24,163 INFO Quelle 'maasland': 3 Treffer, 1 neu
+2026-07-27 00:17:25,215 INFO immoweb: 41 Angebote
+2026-07-27 00:17:25,216 INFO Quelle 'immoweb': 41 Treffer, 0 neu
+2026-07-27 00:17:25,216 INFO Lauf beendet: 78 Treffer gesamt, 1 neu gesamt
