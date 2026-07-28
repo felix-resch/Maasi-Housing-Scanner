@@ -1696,3 +1696,18 @@
 2026-07-28 04:27:26,675 INFO immoweb: 40 Angebote
 2026-07-28 04:27:26,676 INFO Quelle 'immoweb': 40 Treffer, 0 neu
 2026-07-28 04:27:26,676 INFO Lauf beendet: 67 Treffer gesamt, 0 neu gesamt
+2026-07-28 07:18:38,108 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-28 07:18:38,760 INFO kamernet: 17 Listings im HTML
+2026-07-28 07:18:38,760 INFO kamernet: 17 Listings nach Filterung
+2026-07-28 07:18:41,608 INFO Gesendet: Nassaulaan, Maastricht | €613 p.m. | https://kamernet.nl/en/for-rent/room-maastricht/nassaulaan/room-2395906
+2026-07-28 07:18:41,609 INFO Quelle 'kamernet': 17 Treffer, 1 neu
+2026-07-28 07:18:45,328 INFO mghousing: API lieferte 40 Objekte
+2026-07-28 07:18:45,328 INFO mghousing: 5 Objekte nach Filterung
+2026-07-28 07:18:45,330 INFO Quelle 'mghousing': 5 Treffer, 0 neu
+2026-07-28 07:18:46,224 INFO wmm: 14 Angebote
+2026-07-28 07:18:46,224 INFO Quelle 'wmm': 14 Treffer, 0 neu
+2026-07-28 07:18:46,999 INFO maasland: 5 Angebote
+2026-07-28 07:18:46,999 INFO Quelle 'maasland': 5 Treffer, 0 neu
+2026-07-28 07:18:49,260 INFO immoweb: 40 Angebote
+2026-07-28 07:18:49,261 INFO Quelle 'immoweb': 40 Treffer, 0 neu
+2026-07-28 07:18:49,261 INFO Lauf beendet: 81 Treffer gesamt, 1 neu gesamt
