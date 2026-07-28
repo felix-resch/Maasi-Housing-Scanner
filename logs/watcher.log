@@ -1711,3 +1711,19 @@
 2026-07-28 07:18:49,260 INFO immoweb: 40 Angebote
 2026-07-28 07:18:49,261 INFO Quelle 'immoweb': 40 Treffer, 0 neu
 2026-07-28 07:18:49,261 INFO Lauf beendet: 81 Treffer gesamt, 1 neu gesamt
+2026-07-28 10:01:40,999 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-28 10:01:42,846 INFO kamernet: 17 Listings im HTML
+2026-07-28 10:01:42,846 INFO kamernet: 17 Listings nach Filterung
+2026-07-28 10:01:45,693 INFO Gesendet: Lenculenstraat, Maastricht | €450 p.m. | https://kamernet.nl/en/for-rent/room-maastricht/lenculenstraat/room-2395555
+2026-07-28 10:01:45,694 INFO Quelle 'kamernet': 17 Treffer, 1 neu
+2026-07-28 10:01:48,772 INFO mghousing: API lieferte 40 Objekte
+2026-07-28 10:01:48,773 INFO mghousing: 5 Objekte nach Filterung
+2026-07-28 10:01:48,774 INFO Quelle 'mghousing': 5 Treffer, 0 neu
+2026-07-28 10:02:08,803 WARNING Quelle 'wmm' nicht erreichbar: HTTPSConnectionPool(host='wmm.nl', port=443): Max retries exceeded with url: /en/offers (Caused by ConnectTimeoutError(<HTTPSConnection(host='wmm.nl', port=443) at 0x7fb80eac4320>, 'Connection to wmm.nl timed out. (connect timeout=20)'))
+2026-07-28 10:02:09,438 INFO maasland: 5 Angebote
+2026-07-28 10:02:09,438 INFO Quelle 'maasland': 5 Treffer, 0 neu
+2026-07-28 10:02:10,475 INFO immoweb: 40 Angebote
+2026-07-28 10:02:12,995 INFO Gesendet: rue Basse Hermalle, 4600 Visé | €705 p.m. | https://www.immoweb.be/en/classified/6563132
+2026-07-28 10:02:15,354 INFO Gesendet: Markt, 3740 Bilzen-Hoeselt | €860 p.m. | https://www.immoweb.be/en/classified/21733698
+2026-07-28 10:02:15,354 INFO Quelle 'immoweb': 40 Treffer, 2 neu
+2026-07-28 10:02:15,354 INFO Lauf beendet: 67 Treffer gesamt, 3 neu gesamt
