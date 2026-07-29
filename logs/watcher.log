@@ -1915,3 +1915,16 @@
 2026-07-29 11:38:22,836 INFO Gesendet: Heidestraat, 3621 Lanaken | €900 p.m. | https://www.immoweb.be/en/classified/21736082
 2026-07-29 11:38:22,836 INFO Quelle 'immoweb': 41 Treffer, 1 neu
 2026-07-29 11:38:22,836 INFO Lauf beendet: 77 Treffer gesamt, 1 neu gesamt
+2026-07-29 13:24:26,839 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-29 13:24:27,424 INFO kamernet: 17 Listings im HTML
+2026-07-29 13:24:27,424 INFO kamernet: 17 Listings nach Filterung
+2026-07-29 13:24:27,425 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-07-29 13:24:30,155 INFO mghousing: API lieferte 41 Objekte
+2026-07-29 13:24:30,155 INFO mghousing: 4 Objekte nach Filterung
+2026-07-29 13:24:30,157 INFO Quelle 'mghousing': 4 Treffer, 0 neu
+2026-07-29 13:24:50,214 WARNING Quelle 'wmm' nicht erreichbar: HTTPSConnectionPool(host='wmm.nl', port=443): Max retries exceeded with url: /en/offers (Caused by ConnectTimeoutError(<HTTPSConnection(host='wmm.nl', port=443) at 0x7fc55664fc80>, 'Connection to wmm.nl timed out. (connect timeout=20)'))
+2026-07-29 13:24:50,758 INFO maasland: 5 Angebote
+2026-07-29 13:24:50,759 INFO Quelle 'maasland': 5 Treffer, 0 neu
+2026-07-29 13:24:52,078 INFO immoweb: 41 Angebote
+2026-07-29 13:24:52,080 INFO Quelle 'immoweb': 41 Treffer, 0 neu
+2026-07-29 13:24:52,080 INFO Lauf beendet: 67 Treffer gesamt, 0 neu gesamt
