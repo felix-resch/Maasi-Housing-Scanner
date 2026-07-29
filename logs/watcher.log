@@ -1941,3 +1941,18 @@
 2026-07-29 15:31:21,628 INFO immoweb: 40 Angebote
 2026-07-29 15:31:21,629 INFO Quelle 'immoweb': 40 Treffer, 0 neu
 2026-07-29 15:31:21,629 INFO Lauf beendet: 65 Treffer gesamt, 0 neu gesamt
+2026-07-29 16:54:15,363 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-29 16:54:16,685 INFO kamernet: 17 Listings im HTML
+2026-07-29 16:54:16,685 INFO kamernet: 17 Listings nach Filterung
+2026-07-29 16:54:16,686 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-07-29 16:54:18,949 INFO mghousing: API lieferte 41 Objekte
+2026-07-29 16:54:18,950 INFO mghousing: 3 Objekte nach Filterung
+2026-07-29 16:54:18,952 INFO Quelle 'mghousing': 3 Treffer, 0 neu
+2026-07-29 16:54:19,494 INFO wmm: 9 Angebote
+2026-07-29 16:54:22,000 INFO Gesendet: Koning Clovisstraat 84, Maastricht | €2.400,00 / month (excl.) | https://wmm.nl/en/offers/maastricht/koning-clovisstraat-84/8596
+2026-07-29 16:54:22,000 INFO Quelle 'wmm': 9 Treffer, 1 neu
+2026-07-29 16:54:22,464 INFO maasland: 5 Angebote
+2026-07-29 16:54:22,464 INFO Quelle 'maasland': 5 Treffer, 0 neu
+2026-07-29 16:54:23,432 INFO immoweb: 39 Angebote
+2026-07-29 16:54:23,433 INFO Quelle 'immoweb': 39 Treffer, 0 neu
+2026-07-29 16:54:23,433 INFO Lauf beendet: 73 Treffer gesamt, 1 neu gesamt
