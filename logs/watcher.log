@@ -1900,3 +1900,18 @@
 2026-07-29 09:20:41,802 INFO immoweb: 40 Angebote
 2026-07-29 09:20:41,803 INFO Quelle 'immoweb': 40 Treffer, 0 neu
 2026-07-29 09:20:41,803 INFO Lauf beendet: 66 Treffer gesamt, 4 neu gesamt
+2026-07-29 11:38:12,779 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-29 11:38:13,667 INFO kamernet: 17 Listings im HTML
+2026-07-29 11:38:13,667 INFO kamernet: 17 Listings nach Filterung
+2026-07-29 11:38:13,667 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-07-29 11:38:16,805 INFO mghousing: API lieferte 40 Objekte
+2026-07-29 11:38:16,805 INFO mghousing: 4 Objekte nach Filterung
+2026-07-29 11:38:16,807 INFO Quelle 'mghousing': 4 Treffer, 0 neu
+2026-07-29 11:38:17,457 INFO wmm: 10 Angebote
+2026-07-29 11:38:17,457 INFO Quelle 'wmm': 10 Treffer, 0 neu
+2026-07-29 11:38:18,042 INFO maasland: 5 Angebote
+2026-07-29 11:38:18,042 INFO Quelle 'maasland': 5 Treffer, 0 neu
+2026-07-29 11:38:19,508 INFO immoweb: 41 Angebote
+2026-07-29 11:38:22,836 INFO Gesendet: Heidestraat, 3621 Lanaken | €900 p.m. | https://www.immoweb.be/en/classified/21736082
+2026-07-29 11:38:22,836 INFO Quelle 'immoweb': 41 Treffer, 1 neu
+2026-07-29 11:38:22,836 INFO Lauf beendet: 77 Treffer gesamt, 1 neu gesamt
