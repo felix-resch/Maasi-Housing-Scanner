@@ -2140,3 +2140,19 @@
 2026-07-30 15:26:25,108 INFO immoweb: 39 Angebote
 2026-07-30 15:26:25,108 INFO Quelle 'immoweb': 39 Treffer, 0 neu
 2026-07-30 15:26:25,109 INFO Lauf beendet: 71 Treffer gesamt, 2 neu gesamt
+2026-07-30 17:04:40,325 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-30 17:04:41,249 INFO kamernet: 17 Listings im HTML
+2026-07-30 17:04:41,249 INFO kamernet: 17 Listings nach Filterung
+2026-07-30 17:04:43,399 INFO Gesendet: Hoenderstraat, Maastricht | €510 p.m. | https://kamernet.nl/en/for-rent/room-maastricht/hoenderstraat/room-2396671
+2026-07-30 17:04:43,399 INFO Quelle 'kamernet': 17 Treffer, 1 neu
+2026-07-30 17:04:45,441 INFO mghousing: API lieferte 41 Objekte
+2026-07-30 17:04:45,442 INFO mghousing: 3 Objekte nach Filterung
+2026-07-30 17:04:45,444 INFO Quelle 'mghousing': 3 Treffer, 0 neu
+2026-07-30 17:04:45,961 INFO wmm: 7 Angebote
+2026-07-30 17:04:45,962 INFO Quelle 'wmm': 7 Treffer, 0 neu
+2026-07-30 17:04:46,402 INFO maasland: 5 Angebote
+2026-07-30 17:04:46,403 INFO Quelle 'maasland': 5 Treffer, 0 neu
+2026-07-30 17:04:47,276 INFO immoweb: 39 Angebote
+2026-07-30 17:04:49,403 INFO Gesendet: Allée des Alouettes, 58/9, 4600 Vise | €950 p.m. | https://www.immoweb.be/en/classified/21739420
+2026-07-30 17:04:49,404 INFO Quelle 'immoweb': 39 Treffer, 1 neu
+2026-07-30 17:04:49,404 INFO Lauf beendet: 71 Treffer gesamt, 2 neu gesamt
