@@ -2252,3 +2252,18 @@
 2026-07-31 04:49:48,831 INFO immoweb: 39 Angebote
 2026-07-31 04:49:48,832 INFO Quelle 'immoweb': 39 Treffer, 0 neu
 2026-07-31 04:49:48,832 INFO Lauf beendet: 65 Treffer gesamt, 2 neu gesamt
+2026-07-31 07:45:18,236 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-31 07:45:19,200 INFO kamernet: 17 Listings im HTML
+2026-07-31 07:45:19,200 INFO kamernet: 17 Listings nach Filterung
+2026-07-31 07:45:21,816 INFO Gesendet: Glacisweg, Maastricht | €600 p.m. | https://kamernet.nl/en/for-rent/room-maastricht/glacisweg/room-2396558
+2026-07-31 07:45:21,816 INFO Quelle 'kamernet': 17 Treffer, 1 neu
+2026-07-31 07:45:24,552 INFO mghousing: API lieferte 42 Objekte
+2026-07-31 07:45:24,552 INFO mghousing: 3 Objekte nach Filterung
+2026-07-31 07:45:24,553 INFO Quelle 'mghousing': 3 Treffer, 0 neu
+2026-07-31 07:45:25,248 INFO wmm: 7 Angebote
+2026-07-31 07:45:25,248 INFO Quelle 'wmm': 7 Treffer, 0 neu
+2026-07-31 07:45:25,898 INFO maasland: 6 Angebote
+2026-07-31 07:45:25,898 INFO Quelle 'maasland': 6 Treffer, 0 neu
+2026-07-31 07:45:27,003 INFO immoweb: 39 Angebote
+2026-07-31 07:45:27,003 INFO Quelle 'immoweb': 39 Treffer, 0 neu
+2026-07-31 07:45:27,003 INFO Lauf beendet: 72 Treffer gesamt, 1 neu gesamt
