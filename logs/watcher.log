@@ -2281,3 +2281,18 @@
 2026-07-31 10:23:18,158 INFO immoweb: 39 Angebote
 2026-07-31 10:23:18,159 INFO Quelle 'immoweb': 39 Treffer, 0 neu
 2026-07-31 10:23:18,160 INFO Lauf beendet: 65 Treffer gesamt, 1 neu gesamt
+2026-07-31 12:26:31,245 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-31 12:26:34,019 INFO kamernet: 17 Listings im HTML
+2026-07-31 12:26:34,019 INFO kamernet: 17 Listings nach Filterung
+2026-07-31 12:26:36,729 INFO Gesendet: Wycker Grachtstraat, Maastricht | €450 p.m. | https://kamernet.nl/en/for-rent/room-maastricht/wycker-grachtstraat/room-2396840
+2026-07-31 12:26:36,729 INFO Quelle 'kamernet': 17 Treffer, 1 neu
+2026-07-31 12:26:41,198 INFO mghousing: API lieferte 43 Objekte
+2026-07-31 12:26:41,198 INFO mghousing: 3 Objekte nach Filterung
+2026-07-31 12:26:41,200 INFO Quelle 'mghousing': 3 Treffer, 0 neu
+2026-07-31 12:26:41,809 INFO wmm: 7 Angebote
+2026-07-31 12:26:41,809 INFO Quelle 'wmm': 7 Treffer, 0 neu
+2026-07-31 12:26:42,351 INFO maasland: 6 Angebote
+2026-07-31 12:26:42,352 INFO Quelle 'maasland': 6 Treffer, 0 neu
+2026-07-31 12:26:43,534 INFO immoweb: 39 Angebote
+2026-07-31 12:26:43,535 INFO Quelle 'immoweb': 39 Treffer, 0 neu
+2026-07-31 12:26:43,536 INFO Lauf beendet: 72 Treffer gesamt, 1 neu gesamt
