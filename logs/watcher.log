@@ -2237,3 +2237,18 @@
 2026-07-31 01:18:02,815 INFO immoweb: 39 Angebote
 2026-07-31 01:18:02,816 INFO Quelle 'immoweb': 39 Treffer, 0 neu
 2026-07-31 01:18:02,816 INFO Lauf beendet: 64 Treffer gesamt, 0 neu gesamt
+2026-07-31 04:49:20,390 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-31 04:49:21,083 INFO kamernet: 17 Listings im HTML
+2026-07-31 04:49:21,084 INFO kamernet: 17 Listings nach Filterung
+2026-07-31 04:49:21,084 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-07-31 04:49:22,924 INFO mghousing: API lieferte 42 Objekte
+2026-07-31 04:49:22,925 INFO mghousing: 3 Objekte nach Filterung
+2026-07-31 04:49:22,926 INFO Quelle 'mghousing': 3 Treffer, 0 neu
+2026-07-31 04:49:42,960 WARNING Quelle 'wmm' nicht erreichbar: HTTPSConnectionPool(host='wmm.nl', port=443): Max retries exceeded with url: /en/offers (Caused by ConnectTimeoutError(<HTTPSConnection(host='wmm.nl', port=443) at 0x7fa3f0a3fa10>, 'Connection to wmm.nl timed out. (connect timeout=20)'))
+2026-07-31 04:49:43,396 INFO maasland: 6 Angebote
+2026-07-31 04:49:45,713 INFO Gesendet: Capucijnenstraat, Maastricht Binnenstad | €809.33 /month (incl) | https://maaslandrelocation.nl/en/apartment/qe3voxkx/capucijnenstraat-maastricht
+2026-07-31 04:49:47,991 INFO Gesendet: Batterijstraat, Maastricht Binnenstad | €792.29 /month (incl) | https://maaslandrelocation.nl/en/apartment/xkd23d1m/batterijstraat-maastricht
+2026-07-31 04:49:47,991 INFO Quelle 'maasland': 6 Treffer, 2 neu
+2026-07-31 04:49:48,831 INFO immoweb: 39 Angebote
+2026-07-31 04:49:48,832 INFO Quelle 'immoweb': 39 Treffer, 0 neu
+2026-07-31 04:49:48,832 INFO Lauf beendet: 65 Treffer gesamt, 2 neu gesamt
