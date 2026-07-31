@@ -2267,3 +2267,17 @@
 2026-07-31 07:45:27,003 INFO immoweb: 39 Angebote
 2026-07-31 07:45:27,003 INFO Quelle 'immoweb': 39 Treffer, 0 neu
 2026-07-31 07:45:27,003 INFO Lauf beendet: 72 Treffer gesamt, 1 neu gesamt
+2026-07-31 10:22:50,398 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-07-31 10:22:51,790 INFO kamernet: 17 Listings im HTML
+2026-07-31 10:22:51,791 INFO kamernet: 17 Listings nach Filterung
+2026-07-31 10:22:54,447 INFO Gesendet: Dorpstraat, Maastricht | €950 p.m. | https://kamernet.nl/en/for-rent/studio-maastricht/dorpstraat/studio-2396110
+2026-07-31 10:22:54,448 INFO Quelle 'kamernet': 17 Treffer, 1 neu
+2026-07-31 10:22:56,628 INFO mghousing: API lieferte 43 Objekte
+2026-07-31 10:22:56,629 INFO mghousing: 3 Objekte nach Filterung
+2026-07-31 10:22:56,631 INFO Quelle 'mghousing': 3 Treffer, 0 neu
+2026-07-31 10:23:16,671 WARNING Quelle 'wmm' nicht erreichbar: HTTPSConnectionPool(host='wmm.nl', port=443): Max retries exceeded with url: /en/offers (Caused by ConnectTimeoutError(<HTTPSConnection(host='wmm.nl', port=443) at 0x7ff576781790>, 'Connection to wmm.nl timed out. (connect timeout=20)'))
+2026-07-31 10:23:17,132 INFO maasland: 6 Angebote
+2026-07-31 10:23:17,133 INFO Quelle 'maasland': 6 Treffer, 0 neu
+2026-07-31 10:23:18,158 INFO immoweb: 39 Angebote
+2026-07-31 10:23:18,159 INFO Quelle 'immoweb': 39 Treffer, 0 neu
+2026-07-31 10:23:18,160 INFO Lauf beendet: 65 Treffer gesamt, 1 neu gesamt
