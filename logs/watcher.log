@@ -2490,3 +2490,17 @@
 2026-08-01 13:57:54,477 INFO Gesendet: Korenstraat, 3740 Bilzen | €750 p.m. | https://www.immoweb.be/en/classified/21741972
 2026-08-01 13:57:54,477 INFO Quelle 'immoweb': 42 Treffer, 1 neu
 2026-08-01 13:57:54,478 INFO Lauf beendet: 67 Treffer gesamt, 1 neu gesamt
+2026-08-01 15:09:47,200 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-08-01 15:09:48,013 INFO kamernet: 17 Listings im HTML
+2026-08-01 15:09:48,013 INFO kamernet: 16 Listings nach Filterung
+2026-08-01 15:09:48,014 INFO Quelle 'kamernet': 16 Treffer, 0 neu
+2026-08-01 15:09:50,763 INFO mghousing: API lieferte 43 Objekte
+2026-08-01 15:09:50,763 INFO mghousing: 3 Objekte nach Filterung
+2026-08-01 15:09:50,765 INFO Quelle 'mghousing': 3 Treffer, 0 neu
+2026-08-01 15:09:51,533 INFO wmm: 7 Angebote
+2026-08-01 15:09:51,534 INFO Quelle 'wmm': 7 Treffer, 0 neu
+2026-08-01 15:09:52,256 INFO maasland: 6 Angebote
+2026-08-01 15:09:52,257 INFO Quelle 'maasland': 6 Treffer, 0 neu
+2026-08-01 15:09:53,304 INFO immoweb: 42 Angebote
+2026-08-01 15:09:53,305 INFO Quelle 'immoweb': 42 Treffer, 0 neu
+2026-08-01 15:09:53,305 INFO Lauf beendet: 74 Treffer gesamt, 0 neu gesamt
