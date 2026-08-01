@@ -2476,3 +2476,17 @@
 2026-08-01 12:10:40,518 INFO Gesendet: Eigenbilzenstraat, 3740 Bilzen | €600 p.m. | https://www.immoweb.be/en/classified/21741895
 2026-08-01 12:10:40,519 INFO Quelle 'immoweb': 41 Treffer, 1 neu
 2026-08-01 12:10:40,519 INFO Lauf beendet: 66 Treffer gesamt, 1 neu gesamt
+2026-08-01 13:57:27,028 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-08-01 13:57:28,844 INFO kamernet: 17 Listings im HTML
+2026-08-01 13:57:28,844 INFO kamernet: 16 Listings nach Filterung
+2026-08-01 13:57:28,845 INFO Quelle 'kamernet': 16 Treffer, 0 neu
+2026-08-01 13:57:30,891 INFO mghousing: API lieferte 43 Objekte
+2026-08-01 13:57:30,892 INFO mghousing: 3 Objekte nach Filterung
+2026-08-01 13:57:30,893 INFO Quelle 'mghousing': 3 Treffer, 0 neu
+2026-08-01 13:57:50,937 WARNING Quelle 'wmm' nicht erreichbar: HTTPSConnectionPool(host='wmm.nl', port=443): Max retries exceeded with url: /en/offers (Caused by ConnectTimeoutError(<HTTPSConnection(host='wmm.nl', port=443) at 0x7f5413e2fa70>, 'Connection to wmm.nl timed out. (connect timeout=20)'))
+2026-08-01 13:57:51,383 INFO maasland: 6 Angebote
+2026-08-01 13:57:51,384 INFO Quelle 'maasland': 6 Treffer, 0 neu
+2026-08-01 13:57:52,290 INFO immoweb: 42 Angebote
+2026-08-01 13:57:54,477 INFO Gesendet: Korenstraat, 3740 Bilzen | €750 p.m. | https://www.immoweb.be/en/classified/21741972
+2026-08-01 13:57:54,477 INFO Quelle 'immoweb': 42 Treffer, 1 neu
+2026-08-01 13:57:54,478 INFO Lauf beendet: 67 Treffer gesamt, 1 neu gesamt
