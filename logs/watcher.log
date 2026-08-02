@@ -2787,3 +2787,16 @@
 2026-08-02 21:01:47,229 INFO immoweb: 42 Angebote
 2026-08-02 21:01:47,230 INFO Quelle 'immoweb': 42 Treffer, 0 neu
 2026-08-02 21:01:47,230 INFO Lauf beendet: 68 Treffer gesamt, 1 neu gesamt
+2026-08-02 22:06:01,004 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-08-02 22:06:01,666 INFO kamernet: 17 Listings im HTML
+2026-08-02 22:06:01,666 INFO kamernet: 17 Listings nach Filterung
+2026-08-02 22:06:01,666 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-08-02 22:06:04,709 INFO mghousing: API lieferte 43 Objekte
+2026-08-02 22:06:04,710 INFO mghousing: 3 Objekte nach Filterung
+2026-08-02 22:06:04,711 INFO Quelle 'mghousing': 3 Treffer, 0 neu
+2026-08-02 22:06:24,769 WARNING Quelle 'wmm' nicht erreichbar: HTTPSConnectionPool(host='wmm.nl', port=443): Max retries exceeded with url: /en/offers (Caused by ConnectTimeoutError(<HTTPSConnection(host='wmm.nl', port=443) at 0x7fa8508bfe60>, 'Connection to wmm.nl timed out. (connect timeout=20)'))
+2026-08-02 22:06:25,274 INFO maasland: 6 Angebote
+2026-08-02 22:06:25,274 INFO Quelle 'maasland': 6 Treffer, 0 neu
+2026-08-02 22:06:26,209 INFO immoweb: 42 Angebote
+2026-08-02 22:06:26,209 INFO Quelle 'immoweb': 42 Treffer, 0 neu
+2026-08-02 22:06:26,209 INFO Lauf beendet: 68 Treffer gesamt, 0 neu gesamt
