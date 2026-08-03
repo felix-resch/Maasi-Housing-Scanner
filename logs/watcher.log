@@ -2918,3 +2918,18 @@
 2026-08-03 18:10:43,763 INFO immoweb: 39 Angebote
 2026-08-03 18:10:43,764 INFO Quelle 'immoweb': 39 Treffer, 0 neu
 2026-08-03 18:10:43,764 INFO Lauf beendet: 78 Treffer gesamt, 0 neu gesamt
+2026-08-03 20:00:07,048 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-08-03 20:00:08,546 INFO kamernet: 17 Listings im HTML
+2026-08-03 20:00:08,547 INFO kamernet: 17 Listings nach Filterung
+2026-08-03 20:00:08,547 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-08-03 20:00:12,245 INFO mghousing: API lieferte 42 Objekte
+2026-08-03 20:00:12,246 INFO mghousing: 3 Objekte nach Filterung
+2026-08-03 20:00:12,247 INFO Quelle 'mghousing': 3 Treffer, 0 neu
+2026-08-03 20:00:13,169 INFO wmm: 14 Angebote
+2026-08-03 20:00:13,170 INFO Quelle 'wmm': 14 Treffer, 0 neu
+2026-08-03 20:00:13,822 INFO maasland: 5 Angebote
+2026-08-03 20:00:13,823 INFO Quelle 'maasland': 5 Treffer, 0 neu
+2026-08-03 20:00:14,880 INFO immoweb: 39 Angebote
+2026-08-03 20:00:18,072 INFO Gesendet: Hasseltsestraat, 3740 Bilzen | €994 p.m. | https://www.immoweb.be/en/classified/21744905
+2026-08-03 20:00:18,073 INFO Quelle 'immoweb': 39 Treffer, 1 neu
+2026-08-03 20:00:18,073 INFO Lauf beendet: 78 Treffer gesamt, 1 neu gesamt
