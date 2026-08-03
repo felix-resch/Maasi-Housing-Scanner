@@ -2884,3 +2884,23 @@
 2026-08-03 13:47:15,833 INFO immoweb: 39 Angebote
 2026-08-03 13:47:15,834 INFO Quelle 'immoweb': 39 Treffer, 0 neu
 2026-08-03 13:47:15,834 INFO Lauf beendet: 65 Treffer gesamt, 1 neu gesamt
+2026-08-03 16:11:39,719 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-08-03 16:11:40,473 INFO kamernet: 17 Listings im HTML
+2026-08-03 16:11:40,474 INFO kamernet: 17 Listings nach Filterung
+2026-08-03 16:11:40,474 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-08-03 16:11:43,570 INFO mghousing: API lieferte 42 Objekte
+2026-08-03 16:11:43,570 INFO mghousing: 3 Objekte nach Filterung
+2026-08-03 16:11:43,572 INFO Quelle 'mghousing': 3 Treffer, 0 neu
+2026-08-03 16:11:44,423 INFO wmm: 14 Angebote
+2026-08-03 16:11:47,271 INFO Gesendet: Meerssenerweg 35, Maastricht | €699,16 / month (incl.) | https://wmm.nl/en/offers/maastricht/meerssenerweg-35/7335
+2026-08-03 16:11:49,816 INFO Gesendet: Meerssenerweg 13, Maastricht | €723,77 / month (incl.) | https://wmm.nl/en/offers/maastricht/meerssenerweg-13/8214
+2026-08-03 16:11:52,218 INFO Gesendet: Statensingel 201, Maastricht | €539,26 / month (incl.) | https://wmm.nl/en/offers/maastricht/statensingel-201/8245
+2026-08-03 16:11:54,739 INFO Gesendet: Bourgognestraat 68, Maastricht | €644,41 / month (incl.) | https://wmm.nl/en/offers/maastricht/bourgognestraat-68/8313
+2026-08-03 16:11:57,255 INFO Gesendet: Kasteel Schaloenstraat 15, Maastricht | €1.950,00 / month (excl.) | https://wmm.nl/en/offers/maastricht/kasteel-schaloenstraat-15/8554
+2026-08-03 16:11:59,634 INFO Gesendet: Meerssenerweg 291A, Maastricht | €614,80 / month (incl.) | https://wmm.nl/en/offers/maastricht/meerssenerweg-291a/11981
+2026-08-03 16:11:59,634 INFO Quelle 'wmm': 14 Treffer, 6 neu
+2026-08-03 16:12:00,534 INFO maasland: 5 Angebote
+2026-08-03 16:12:00,535 INFO Quelle 'maasland': 5 Treffer, 0 neu
+2026-08-03 16:12:01,705 INFO immoweb: 39 Angebote
+2026-08-03 16:12:01,706 INFO Quelle 'immoweb': 39 Treffer, 0 neu
+2026-08-03 16:12:01,706 INFO Lauf beendet: 78 Treffer gesamt, 6 neu gesamt
