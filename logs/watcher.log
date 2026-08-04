@@ -3047,3 +3047,18 @@
 2026-08-04 12:17:44,586 INFO immoweb: 40 Angebote
 2026-08-04 12:17:44,586 INFO Quelle 'immoweb': 40 Treffer, 0 neu
 2026-08-04 12:17:44,586 INFO Lauf beendet: 83 Treffer gesamt, 4 neu gesamt
+2026-08-04 14:45:53,755 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-08-04 14:45:54,496 INFO kamernet: 17 Listings im HTML
+2026-08-04 14:45:54,496 INFO kamernet: 17 Listings nach Filterung
+2026-08-04 14:45:57,304 INFO Gesendet: Bergerstraat, Maastricht | €529 p.m. | https://kamernet.nl/en/for-rent/studio-maastricht/bergerstraat/studio-2397599
+2026-08-04 14:45:57,304 INFO Quelle 'kamernet': 17 Treffer, 1 neu
+2026-08-04 14:45:59,676 INFO mghousing: API lieferte 42 Objekte
+2026-08-04 14:45:59,677 INFO mghousing: 4 Objekte nach Filterung
+2026-08-04 14:45:59,679 INFO Quelle 'mghousing': 4 Treffer, 0 neu
+2026-08-04 14:46:00,499 INFO wmm: 18 Angebote
+2026-08-04 14:46:00,499 INFO Quelle 'wmm': 18 Treffer, 0 neu
+2026-08-04 14:46:01,039 INFO maasland: 4 Angebote
+2026-08-04 14:46:01,039 INFO Quelle 'maasland': 4 Treffer, 0 neu
+2026-08-04 14:46:01,974 INFO immoweb: 40 Angebote
+2026-08-04 14:46:01,975 INFO Quelle 'immoweb': 40 Treffer, 0 neu
+2026-08-04 14:46:01,975 INFO Lauf beendet: 83 Treffer gesamt, 1 neu gesamt
