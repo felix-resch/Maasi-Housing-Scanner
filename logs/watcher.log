@@ -3014,3 +3014,18 @@
 2026-08-04 07:19:59,708 INFO immoweb: 39 Angebote
 2026-08-04 07:19:59,709 INFO Quelle 'immoweb': 39 Treffer, 0 neu
 2026-08-04 07:19:59,709 INFO Lauf beendet: 77 Treffer gesamt, 0 neu gesamt
+2026-08-04 10:06:38,273 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-08-04 10:06:39,159 INFO kamernet: 17 Listings im HTML
+2026-08-04 10:06:39,159 INFO kamernet: 17 Listings nach Filterung
+2026-08-04 10:06:39,160 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-08-04 10:06:41,675 INFO mghousing: API lieferte 41 Objekte
+2026-08-04 10:06:41,675 INFO mghousing: 4 Objekte nach Filterung
+2026-08-04 10:06:41,676 INFO Quelle 'mghousing': 4 Treffer, 0 neu
+2026-08-04 10:06:42,431 INFO wmm: 14 Angebote
+2026-08-04 10:06:42,431 INFO Quelle 'wmm': 14 Treffer, 0 neu
+2026-08-04 10:06:43,119 INFO maasland: 4 Angebote
+2026-08-04 10:06:43,120 INFO Quelle 'maasland': 4 Treffer, 0 neu
+2026-08-04 10:06:44,242 INFO immoweb: 40 Angebote
+2026-08-04 10:06:46,618 INFO Gesendet: Belgicastraat, 3740 Bilzen | €1.200 p.m. | https://www.immoweb.be/en/classified/21745753
+2026-08-04 10:06:46,618 INFO Quelle 'immoweb': 40 Treffer, 1 neu
+2026-08-04 10:06:46,618 INFO Lauf beendet: 79 Treffer gesamt, 1 neu gesamt
