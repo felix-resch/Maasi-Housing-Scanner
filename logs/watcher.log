@@ -3220,3 +3220,19 @@
 2026-08-05 12:14:17,966 INFO immoweb: 39 Angebote
 2026-08-05 12:14:17,967 INFO Quelle 'immoweb': 39 Treffer, 0 neu
 2026-08-05 12:14:17,967 INFO Lauf beendet: 86 Treffer gesamt, 0 neu gesamt
+2026-08-05 14:39:21,232 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-08-05 14:39:22,116 INFO kamernet: 17 Listings im HTML
+2026-08-05 14:39:22,116 INFO kamernet: 17 Listings nach Filterung
+2026-08-05 14:39:22,117 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-08-05 14:39:25,852 INFO mghousing: API lieferte 42 Objekte
+2026-08-05 14:39:25,852 INFO mghousing: 4 Objekte nach Filterung
+2026-08-05 14:39:25,853 INFO Quelle 'mghousing': 4 Treffer, 0 neu
+2026-08-05 14:39:26,586 INFO wmm: 20 Angebote
+2026-08-05 14:39:26,586 INFO Quelle 'wmm': 20 Treffer, 0 neu
+2026-08-05 14:39:27,196 INFO maasland: 6 Angebote
+2026-08-05 14:39:27,196 INFO Quelle 'maasland': 6 Treffer, 0 neu
+2026-08-05 14:39:28,222 INFO immoweb: 41 Angebote
+2026-08-05 14:39:31,170 INFO Gesendet: Gemeenteplein, 3770 Riemst | €830 p.m. | https://www.immoweb.be/en/classified/21748969
+2026-08-05 14:39:34,467 INFO Gesendet: Allée des Fauvettes, 4600 Visé | €1.200 p.m. | https://www.immoweb.be/en/classified/21749332
+2026-08-05 14:39:34,467 INFO Quelle 'immoweb': 41 Treffer, 2 neu
+2026-08-05 14:39:34,467 INFO Lauf beendet: 88 Treffer gesamt, 2 neu gesamt
