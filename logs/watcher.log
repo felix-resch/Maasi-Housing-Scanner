@@ -3186,3 +3186,23 @@
 2026-08-05 07:20:55,403 INFO immoweb: 39 Angebote
 2026-08-05 07:20:55,404 INFO Quelle 'immoweb': 39 Treffer, 0 neu
 2026-08-05 07:20:55,404 INFO Lauf beendet: 82 Treffer gesamt, 1 neu gesamt
+2026-08-05 10:04:22,040 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-08-05 10:04:22,645 INFO kamernet: 17 Listings im HTML
+2026-08-05 10:04:22,646 INFO kamernet: 17 Listings nach Filterung
+2026-08-05 10:04:24,760 INFO Gesendet: Cannerweg, Maastricht | €805 p.m. | https://kamernet.nl/en/for-rent/room-maastricht/cannerweg/room-2397819
+2026-08-05 10:04:24,761 INFO Quelle 'kamernet': 17 Treffer, 1 neu
+2026-08-05 10:04:26,639 INFO mghousing: API lieferte 42 Objekte
+2026-08-05 10:04:26,640 INFO mghousing: 4 Objekte nach Filterung
+2026-08-05 10:04:26,642 INFO Quelle 'mghousing': 4 Treffer, 0 neu
+2026-08-05 10:04:27,213 INFO wmm: 21 Angebote
+2026-08-05 10:04:29,173 INFO Gesendet: Meerssenerweg 35, Maastricht | €736,52 / month (incl.) | https://wmm.nl/en/offers/maastricht/meerssenerweg-35/7336
+2026-08-05 10:04:31,187 INFO Gesendet: Franquinetstraat 6, Maastricht | €476,90 / month (incl.) | https://wmm.nl/en/offers/maastricht/franquinetstraat-6/7630
+2026-08-05 10:04:33,204 INFO Gesendet: Parallelweg 39, Maastricht | €741,99 / month (incl.) | https://wmm.nl/en/offers/maastricht/parallelweg-39/8276
+2026-08-05 10:04:35,196 INFO Gesendet: Baron van Hovellstraat 73, Maastricht | €546,58 / month (incl.) | https://wmm.nl/en/offers/maastricht/baron-van-hovellstraat-73/8610
+2026-08-05 10:04:37,338 INFO Gesendet: Populierweg 53A, Maastricht | €799,50 / month (incl.) | https://wmm.nl/en/offers/maastricht/populierweg-53a/8948
+2026-08-05 10:04:37,338 INFO Quelle 'wmm': 21 Treffer, 5 neu
+2026-08-05 10:04:37,805 INFO maasland: 6 Angebote
+2026-08-05 10:04:37,806 INFO Quelle 'maasland': 6 Treffer, 0 neu
+2026-08-05 10:04:38,838 INFO immoweb: 39 Angebote
+2026-08-05 10:04:38,839 INFO Quelle 'immoweb': 39 Treffer, 0 neu
+2026-08-05 10:04:38,840 INFO Lauf beendet: 87 Treffer gesamt, 6 neu gesamt
