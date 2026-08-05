@@ -3171,3 +3171,18 @@
 2026-08-05 04:31:44,466 INFO immoweb: 39 Angebote
 2026-08-05 04:31:44,466 INFO Quelle 'immoweb': 39 Treffer, 0 neu
 2026-08-05 04:31:44,466 INFO Lauf beendet: 82 Treffer gesamt, 2 neu gesamt
+2026-08-05 07:20:46,951 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-08-05 07:20:47,656 INFO kamernet: 17 Listings im HTML
+2026-08-05 07:20:47,657 INFO kamernet: 17 Listings nach Filterung
+2026-08-05 07:20:50,733 INFO Gesendet: Mariastraat, Maastricht | €495 p.m. | https://kamernet.nl/en/for-rent/room-maastricht/mariastraat/room-2397794
+2026-08-05 07:20:50,733 INFO Quelle 'kamernet': 17 Treffer, 1 neu
+2026-08-05 07:20:53,140 INFO mghousing: API lieferte 42 Objekte
+2026-08-05 07:20:53,140 INFO mghousing: 4 Objekte nach Filterung
+2026-08-05 07:20:53,142 INFO Quelle 'mghousing': 4 Treffer, 0 neu
+2026-08-05 07:20:53,894 INFO wmm: 16 Angebote
+2026-08-05 07:20:53,895 INFO Quelle 'wmm': 16 Treffer, 0 neu
+2026-08-05 07:20:54,396 INFO maasland: 6 Angebote
+2026-08-05 07:20:54,396 INFO Quelle 'maasland': 6 Treffer, 0 neu
+2026-08-05 07:20:55,403 INFO immoweb: 39 Angebote
+2026-08-05 07:20:55,404 INFO Quelle 'immoweb': 39 Treffer, 0 neu
+2026-08-05 07:20:55,404 INFO Lauf beendet: 82 Treffer gesamt, 1 neu gesamt
