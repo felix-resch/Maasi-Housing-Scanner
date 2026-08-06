@@ -3331,3 +3331,18 @@
 2026-08-06 00:55:11,842 INFO immoweb: 41 Angebote
 2026-08-06 00:55:11,843 INFO Quelle 'immoweb': 41 Treffer, 0 neu
 2026-08-06 00:55:11,843 INFO Lauf beendet: 68 Treffer gesamt, 0 neu gesamt
+2026-08-06 04:16:55,316 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-08-06 04:16:55,914 INFO kamernet: 17 Listings im HTML
+2026-08-06 04:16:55,914 INFO kamernet: 17 Listings nach Filterung
+2026-08-06 04:16:55,914 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-08-06 04:17:03,342 INFO mghousing: API lieferte 42 Objekte
+2026-08-06 04:17:03,342 INFO mghousing: 4 Objekte nach Filterung
+2026-08-06 04:17:03,344 INFO Quelle 'mghousing': 4 Treffer, 0 neu
+2026-08-06 04:17:04,509 INFO wmm: 19 Angebote
+2026-08-06 04:17:04,509 INFO Quelle 'wmm': 19 Treffer, 0 neu
+2026-08-06 04:17:05,131 INFO maasland: 7 Angebote
+2026-08-06 04:17:07,870 INFO Gesendet: Sint Maartenslaan, Maastricht Wyck | €995.00 /month (incl) | https://maaslandrelocation.nl/en/apartment/oeorm3e4/sint-maartenslaan-maastricht
+2026-08-06 04:17:07,870 INFO Quelle 'maasland': 7 Treffer, 1 neu
+2026-08-06 04:17:08,852 INFO immoweb: 41 Angebote
+2026-08-06 04:17:08,853 INFO Quelle 'immoweb': 41 Treffer, 0 neu
+2026-08-06 04:17:08,853 INFO Lauf beendet: 88 Treffer gesamt, 1 neu gesamt
