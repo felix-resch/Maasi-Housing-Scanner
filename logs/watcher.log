@@ -3391,3 +3391,17 @@
 2026-08-06 12:10:31,586 INFO immoweb: 41 Angebote
 2026-08-06 12:10:31,587 INFO Quelle 'immoweb': 41 Treffer, 0 neu
 2026-08-06 12:10:31,587 INFO Lauf beendet: 70 Treffer gesamt, 1 neu gesamt
+2026-08-06 14:36:33,162 WARNING Quelle 'huurwoningen' nicht erreichbar: 403 Client Error: Forbidden for url: https://www.huurwoningen.nl/en/in/maastricht/
+2026-08-06 14:36:34,039 INFO kamernet: 17 Listings im HTML
+2026-08-06 14:36:34,039 INFO kamernet: 17 Listings nach Filterung
+2026-08-06 14:36:34,040 INFO Quelle 'kamernet': 17 Treffer, 0 neu
+2026-08-06 14:36:36,681 INFO mghousing: API lieferte 43 Objekte
+2026-08-06 14:36:36,682 INFO mghousing: 5 Objekte nach Filterung
+2026-08-06 14:36:36,683 INFO Quelle 'mghousing': 5 Treffer, 0 neu
+2026-08-06 14:36:56,731 WARNING Quelle 'wmm' nicht erreichbar: HTTPSConnectionPool(host='wmm.nl', port=443): Max retries exceeded with url: /en/offers (Caused by ConnectTimeoutError(<HTTPSConnection(host='wmm.nl', port=443) at 0x7fbe569f7a40>, 'Connection to wmm.nl timed out. (connect timeout=20)'))
+2026-08-06 14:36:57,349 INFO maasland: 7 Angebote
+2026-08-06 14:36:57,349 INFO Quelle 'maasland': 7 Treffer, 0 neu
+2026-08-06 14:36:59,482 INFO immoweb: 41 Angebote
+2026-08-06 14:37:02,051 INFO Gesendet: Rue Préixhe, 4600 VISÉ | €980 p.m. | https://www.immoweb.be/en/classified/21751191
+2026-08-06 14:37:02,052 INFO Quelle 'immoweb': 41 Treffer, 1 neu
+2026-08-06 14:37:02,052 INFO Lauf beendet: 70 Treffer gesamt, 1 neu gesamt
